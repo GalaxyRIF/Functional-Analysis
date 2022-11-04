@@ -1,0 +1,11 @@
+{
+    "files.exclude": {
+            "main.aux": true,
+        "main.gz": true,
+        "*main.log": true,
+        "main.out": true,
+        "*main.toc": true,
+        "main.synctex.gz":true,
+        ".gitignore":true,
+    }
+}
