@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{geometry}
+\geometry{left=3cm,right=3cm,top=2cm,bottom=2cm}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{comment}
+\usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage[hidelinks,backref]{hyperref}
+\title{Functional Analysis}
+\author{RIF Galaxy }
+\date{August 2022}
+
+\begin{document}
+
+\maketitle
+%Remark\\
+On this note:
+This note is primarily made for personal study purpose. %One should realise that any part that is unnecessarily detailed are those trouble the author with subtle logical problem. He kept asking himself stupid questions on those details, resulting in detailed answers.\\
+%The note is made prior to the course taking place,relevant materials to the lectures taking place at Imperial College London 3rd year FA course will be labelled with {\color{red}\bf\S\S\S},important for exam will be labelled by {\color{red}\bf***}
+The note is made prior to the course taking place, and will be updated according to the lectures for Imperial College London 3rd year FA course(2022).
+
+\newcommand{\nextline}{\hfill\break}
+\newcommand{\nl}{nl}
+\newcommand{\inne}[2]{\left<{#1},{#2}\right>}
+\newcommand{\norm}[1]{\left\|{#1}\right\|}
+\newcommand{\hbs}{$\mathscr{H}$ }
+\newcommand{\hbp}{\mathscr{H}}
+\newcommand{\dual}[1]{{#1}^*}
+\newcommand{\plz}{{\texorpdfstring{\color{red}\bf\S\S\S}{}}}
+\newcommand{\plzaq}{{\texorpdfstring{\color{red}\bf***}{}}}
+\newcommand{\real}{\mathbb{R}}
+\newcommand{\comp}{\mathbb{C}}
+\newcommand{\inte}{\mathbb{Z}}
+\newcommand{\natu}{\mathbb{N}}
+\newcommand{\func}[3]{${#1}:{#2}\xrightarrow{}{#3}$}
+\newcommand{\pf}{\textit{proof}:   }
+\newcommand{\placeholder}{\color{red} NOOOOOOT COMPLEEEEEEET! COOOOOOOM BAAAAAACK!!!}
+\newcommand{\sequ}[1]{\left({#1}\right)_1^\infty}
+
+\newtheorem{example}{Example}[subsection]
+\newtheorem{definition}[example]{Definition}
+\newtheorem{proposition}[example]{Proposition}
+\newtheorem{remark}[example]{Remark}
+\newtheorem{theorem}[example]{Theorem}
+\newtheorem{lemma}[example]{Lemma}
+\newtheorem{corollary}[example]{Corollary}
+\tableofcontents
+
+\input{Chapter/Content.tex}
+\input{Chapter/Linear space Preliminaries.tex}
+\input{Chapter/Normed,Banach,Hilbert.tex}
+\input{Chapter/Operator and functional.tex}
+\input{Chapter/Hahn.tex}
+\input{Chapter/UBP.tex}
+\input{Chapter/OpenMapping.tex}
+\input{Chapter/Appendix.tex}
+\end{document}
+

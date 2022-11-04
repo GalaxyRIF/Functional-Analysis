@@ -1,0 +1,143 @@
+\newpage
+\section{Hahn-Banach Theorem}
+One of the most import results in functional analysis, {\bf Hahn-Banach theorem} is a theorem dealing with extending linear maps from a subspace to the whole space. The theorem says that any bounded linear functional defined on a subspace can be  extended to the whole space, while preserving the norm. The result does not rely on completeness of the space, so it's a result for all normed linear spaces. The proof of this theorem involves using a version of \textit{\bf axiom of choice (AC) }, Zorn's lemma. We shall review this lemma first.
+
+\begin{definition}[Partial Order]\rm \nextline
+	A partial order on set $X$, is a binary relation, written generically $\leq$, satisfying following property.
+	\begin{itemize}
+		\item transitivity: if $a\leq b$ and $b\leq c$ then $a\leq c$
+		\item reflexivity: $a\leq a$
+		\item anti-symmetry: if $a\leq b$ and $b\leq a$ then $a=b$
+
+	\end{itemize}
+	If we also have that for any $a$ and $b$, either $a\leq b$ or $b\leq a$, then we say $\leq$ is a total order.
+
+\end{definition}
+
+\begin{definition}[Upper bound]\rm\nextline
+	Let $X$ be a set partially ordered by $\leq$ and $Y\subset X$, we say an element $x\in X$ is an {\bf upper bound} of $Y$ if $y\leq x\,\,\forall y\in Y$.
+
+\end{definition}
+
+\begin{definition}[Maximal element]\rm\nextline
+	Let $X$ be a set partially ordered by $\leq$ and $Y\subset X$. say $x\in X$ is a maximal element of $X$ if $x\leq m$ implies $m=x$.
+
+\end{definition}
+\begin{lemma}[Zorn's lemma]\rm\nextline
+	If $X$ is a nonempty partially ordered set with the
+	property that every totally ordered subset of $X$ has an upper bound in $X$, then $X$ has
+	a maximal element.
+\end{lemma}
+
+\begin{theorem}[Hahn-Banach Theorem]\rm\nextline
+	Let $X$ be a normed vector space over $\mathbb F$ ($\mathbb{C}$ or $\mathbb{R}$), $Y$ is a proper subspace of $X$. If $T_0:Y\xrightarrow{}\mathbb{F}$ is a bounded linear functional, then there exists a bounded linear functional $T:X\xrightarrow{}\mathbb{F}$ satisfying:
+	\begin{itemize}
+		\item $T(y)=T_0(y)$ for all $y\in Y$
+		\item $\norm{T}=\norm{T_0}$
+	\end{itemize}
+\end{theorem}
+To prove the theorem, the idea is first to show that we can extend linear functional by one dimension, with induction to show that extension can be done to "arbitrarily high dimension". Then by using Zorn's lemma we show that such extension "reaches" every dimension of the space. We first provide real version of the theorem.
+
+\begin{lemma}[one-dimensional extension]\label{ODEX}\rm\nextline
+	Let $X$ be a normed vector space over $\mathbb F$ ($\mathbb{C}$ or $\mathbb{R}$), $Y_n$ is a proper subspace of $X$. Let $v\in X\backslash Y$, $X_{n+1}=\{x+hv:x\in X_n,\,h\in\mathbb{C}\}$
+	. If $T_n:Y\xrightarrow{}\mathbb{F}$ is a bounded linear functional, then there exists a bounded linear functional $T_{n+1}:X_{n+1}\xrightarrow{}\mathbb{F}$ satisfying:
+	\begin{itemize}
+		\item $T_{n+1}(x)=T_n(x)$ for all $x\in X_n$
+		\item $\norm{T_{n+1}}=\norm{T_n}$
+	\end{itemize}
+	\textit{proof}:\\
+	Define linear functional $P:X_{n+1}\xrightarrow{}\mathbb{R}$ by
+	$$
+		P(x+kv)=T_n(x)-Ck,\,\forall\,x\in X_n,\,k\in\mathbb{R}
+	$$
+	where C is a constant to be determined.
+	First we shall check linearity, which is left as an exercise.
+	Then we shall show that we can find a proper constant $C$ so that $\norm{P}=\norm{T_n}$. Note that $X_n\subset X_{n+1}$, so we have
+	\begin{equation}
+		\begin{split}
+			\norm{P}&=\sup_{x\in X_{n+1}}(\{|Px|:\norm{x}=1\})\\
+			&\geq\sup_{x\in X_{n}}(\{|Px|:\norm{x}=1\})\\
+			&=\sup_{x\in X_{n}}(\{|T_nx|:\norm{x}=1\})\\
+			&=1
+		\end{split}
+	\end{equation}
+	So by choosing $C$ such that $P(x+kv)\leq \norm{x+kv}$ for any $x\in X_n$ and $k\in \mathbb{R}$, we will have that $\norm{P}\leq 1$, giving $\norm{P}=1$. Thus it remains to show that we can find such a constant $C$.\\
+	We aim to find $C$ such that
+	$$
+		|P(x+kv)|=|T_n(x)-Ck|\leq \norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
+	$$
+	Hence,
+	$$
+		T_n(x)-\norm{x+kv}\leq Ck\leq T_n(x)+\norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
+	$$
+	Note that for all $x,y\in X_n$ we have:
+	\begin{equation}
+		\begin{split}
+			T_nx-T_ny&=T_n(x-y)\\
+			&\leq \norm{x-y}\\
+			&=\norm{(x+kv)-(kv+y)}\\
+			&\leq\norm{x+kv}+\norm{y+kv}
+		\end{split}
+	\end{equation}
+	Thus
+	$$
+		l^-=\sup_{x\in X_n,k\in\mathbb{R}}(T_n(x)-\norm{x+kv})\leq  \inf_{x\in X_n,k\in\mathbb{R}}(T_n(x)+\norm{x+kv})=l^+
+	$$
+	Hence we can always find a $C$ such that
+	$$
+		T_n(x)-\norm{x+kv}\leq l^-\leq Ck\leq l^+ \leq T_n(x)+\norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
+	$$
+	Which finishes the proof.
+\end{lemma}
+\subsection{Proof of Hahn-Banach theorem,real case}
+Starting from $T_0:Y\xrightarrow{}\mathbb{R}$, by \ref{ODEX} we can define  $T_{n+1}$ to be the one-dimensional extension of $T_n$ for any $n\in\mathbb{N}$, with domain $Y_{n+1}$ extended from $Y_n$, for convenience we let$Y_0=Y$.
+Then consider the set
+$$
+	M=
+	\left\{
+	(T_n,Y_n),n\in\mathbb{N}
+	\right\}
+$$
+which can be partially ordered by $\leq$ defined as
+$$
+	(T_a,Y_a)\leq(T_b,Y_b)\,\text{ if } Y_a\subset Y_b,\,\text{ and } T_b=T_a\, \text{ on }\, Y_a
+$$
+Now let $S=\{(T_i,Y_i),i\in I\}$ (where $I$ is the index set) be a totally ordered subset of $M$. Consider $Y'=\cup_{i\in I}Y_i$ with $T'(x)=T_i(x)$ if $x\in Y_i$, we have that $(T',Y')\in M$ is an upper bound of $S$. By Zorn's lemma, we know that $M$ has a maximal element, denoted as $(T_\infty,Y_\infty)$. We claim that $Y_\infty=X$, because if not, we can do one-dimensional extension to $Y_\infty$, resulting in $X\subset Y_\infty+1$, contradicting with maximality. Thus we have $Y_\infty=X$, and  $T_\infty$ is the desired extension to $X$.
+
+\subsection{Proof of Hahn-Banach theorem,complex case}
+To prove the statement for complex case, we shall exploit a connection between real valued functional and complex one.\\
+\begin{proposition}\rm\nextline
+	Let $T:X\xrightarrow{}\mathbb{C}$ be a complex linear functional. Define $u(x)=Re(T(x))$ for all $x\in X$. Then
+	\begin{itemize}
+		\item $u(x)$ is a real-valued linear functional
+		\item $T(x)=u(x)-iu(ix)$
+		\item $\norm{u}=\norm{T}$
+	\end{itemize}
+	Moreover, given any linear functional $u(x)$, $T(x)=u(x)-iu(ix)$ defines a complex linear functional
+	\textit{proof:}\\
+	The first two are very easy to show. The hardest part is on the third statement. We first show that $\norm{T}\geq\norm{u}$:
+	\begin{equation}
+		\begin{split}
+			\norm{T}^2&=\sup\{|T x|^2,\norm{x}=1\}\\
+			&=\sup\{|u(x)-iu(ix)|^2,\norm{x}=1\}\\
+			&=\sup \{[u(x)]^2+[u(ix)]^2,\norm{x}=1\}\\
+			&\geq \sup \{[u(x)]^2,\norm{x}=1\}\\
+			&=\norm{u}^2
+		\end{split}
+	\end{equation}
+	On the other hand, pick any $x\in X$ with $\norm{x}=1$, denote $T(x)=re^{i\theta}$, we have
+	$$|T(x)|=|e^{-i\theta}||T(x)|=|T(e^{-i\theta}x)|=|u(e^{-i\theta}x)-iu(e^{-i\theta}x)|$$
+	\begin{equation}
+		\begin{split}
+			|T(x)|&=|e^{-i\theta}||T(x)|\\
+			&=|T(e^{-i\theta}x)|\\
+			&=|u(e^{-i\theta}x)-iu(e^{-i\theta}x)|
+		\end{split}
+	\end{equation}
+	But we have that $T(e^{-i\theta}x)=r\in\mathbb{R}$, thus
+	$$
+		|T(e^{-i\theta}x)|=|Re(T(e^{-i\theta}x))|=|u(e^{-i\theta}x)|\leq\norm{u}
+	$$
+	Hence $\norm{T}=\norm{u}$.
+\end{proposition}
+The remaining part of the proof is simply combining last result and the proof of real case. However, last result also gives a insight on complex bounded linear functional
