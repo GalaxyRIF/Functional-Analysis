@@ -1,7 +1,40 @@
 \newpage
 \section{Appendix}
 \subsection{Minkowski's inequality}\label{Minkowski-holder}
+
 \subsection{Hölder's Inequality}\label{Hölder's inequality}
+\begin{theorem}[Hölder's inequality,]\rm\nextline
+Let $p,q\in[1,\infty]$,	satisfying:
+$$
+\frac{1}{p}+\frac{1}{q}=1
+$$
+Then if $x\in\ell^p$ and $y\in\ell^q$ then 
+$$
+\norm{x}_p\norm{y}_q\geq\norm{xy}_1
+\iff
+\left(\sum_{n=1}^\infty{|x_n|}^p\right)^{1/p}
+\left(\sum_{n=1}^\infty{|y_n|}^q\right)^{1/q}\geq\sum_{n=1}^\infty|x_ny_n|
+$$
+Then if $g\in L^p(S)$ and $g\in L^q(S)$ then 
+$$
+\norm{f}_p\norm{g}_q\geq\norm{fg}_1
+\iff
+\left(\int_S{|f|}^pdx\right)^{1/p}
+\left(\int_S{|g|}^qdx\right)^{1/q}
+\geq\int_S|fg|dx
+$$
+\end{theorem}
+\begin{remark}[Short version]\rm\nextline
+Here's the key information of the above theorem:
+$$
+\frac{1}{p}+\frac{1}{q}=1\implies \norm{x}_p\norm{y}_q\geq\norm{xy}_1
+$$
+\end{remark}
+\begin{remark}
+When supremum occurs, which is  one of $p$ and $q$ becomes infinity and another becomes 1, the inequality still holds. One should pay attention that for $L^p$ spaces the supremum norm is actually essential supremum.
+\end{remark}
+
+
 \subsection{Jensen's Inequality (convex function)}\label{Jensen's inquality}
 Let $\mathbb{I}\subset \real$. A function \func{f}{\mathrm{I}}{\real} is {\bf convex} if the following holds for all $t\in[0,1]$:
 $$
@@ -26,7 +59,7 @@ $$
 $$
 
 \begin{remark}[Generalised Jensen's Inequality]\rm\nextline
-	Jensen's inequality can be generalised to a sequence variables with weight. Consider a convex function evaluated at $x_1,x_2...$, $f(x_1),f(x_2)...f(x_n)$, with weight $w_1,w_2...$ with $\sum_{j\in\natu}w_j=1$, where
+	Jensen's inequality can be generalized to a sequence variables with weight. Consider a convex function evaluated at $x_1,x_2...$, $f(x_1),f(x_2)...f(x_n)$, with weight $w_1,w_2...$ with $\sum_{j\in\natu}w_j=1$, where
 	$$
 		\sum_{j\in\natu}w_j f(x_j)<\infty \quad\text{and}\quad
 		\sum_{j\in\natu} f(w_jx_j)<\infty
@@ -40,6 +73,7 @@ $$
 \begin{remark}[$f''>0$]\rm\nextline
 	For single variable twice differentiable function, second derivative being non=negative implies convexity.
 \end{remark}
+
 
 \subsection{Completion of metric space}\label{completion of metric space}
 
