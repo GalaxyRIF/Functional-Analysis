@@ -109,6 +109,9 @@ Definition for continuous linear functional is similar to the that of continuous
 \end{proposition}
 
 \newpage
+
+
+
 \subsection{Basic Operator Theory}
 \subsubsection{Bounded linear operator}
 \begin{definition}[Linear operator]\rm\nextline
@@ -165,6 +168,9 @@ Definition for continuous linear functional is similar to the that of continuous
 \end{theorem}
 
 %\subsubsection{Adjoints of Hilbert space operators.}
+
+
+
 \subsection{Duality}
 
 \subsubsection{Dual space: A nice self-symmetry}
@@ -309,10 +315,76 @@ We have shown that dual space of a Banach space is Banach, what about dual space
 In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$, the space is Hilbert. In other cases,  when $p\not=2$, what happens? One may realise that $q=p=2$ is precisely a solution to $1/p+1/q=1$, and $p=q$ gives the self-duality. We will investigate this intuition here and prove that the dual space of $l_p$ is precisely $l_q$, where $1/p+1/q=1$,$p,q\in\real$. One should pay attention here, that $p=\infty$ is slightly different, the result may not hold in given $p=\infty$.
 
 \begin{theorem}[Dual of \texorpdfstring{$\ell^p$}.]\rm\nextline
-	Let $p\in (1,\infty)$, then $(\ell^p)^*=\ell^q $, where $1/p+1/q=1$.\\
+	Let $p\in (1,\infty)$, then $(\ell^p)^*\cong\ell^q $, where $1/p+1/q=1$.\\
 	\pf\\
-	Let 
+	The proof has two parts. First we show that every element  $y\in\ell^q$ uniquely defines a linear linear functional \func{\Lambda_y}{X}{\real}, then we prove surjectivity, which means that every functional $l\in(\ell^p)^*$ can be uniquely represented by an element in $\ell^q$. Equation $1/p+1/q=1$ and its variation like $p+q=pq$ and  $1+q/p=q$ will be useful at some steps.\\
+	{\bf{STEP I}}\\
+	Let $y=\sequ{y_n}\in\ell^q$,,define \func{\Lambda_y}{X}{\real}, by 
+	$$\Lambda_y(x)=\sum_{k=1}^{\infty}x_ny_n,\,\,\forall x=\sequ{x_n}\in\ell^p$$
+	We claim that:\begin{itemize}
+		\item $\Lambda_y\in(\ell^p)^*$, which means that $\Lambda_y$ is a bounded linear functional.
+		\item $\norm{\Lambda_y}\equiv\sup\{|\Lambda_y(x)|:\norm{x}_p=1\}=\norm{y}_q$, i.e. the map $y\rightarrow\Lambda_y$ is an isometry.
+	\end{itemize}
+	Linearity immediately follows from definition. To check boundedness, we notice that
+	\begin{equation}
+		\begin{split}
+		\left|\Lambda_y(x)\right|&=\left|\sum_{k=1}^{\infty}x_ny_n\right|\\
+		&\leq\sum_{k=1}^{\infty}|x_ny_n|\\
+		&\leq\norm{xy}_1\\
+		\text{(Hölder)}\quad&\leq\norm{x}_p\norm{y}_q
+		\end{split}
+	\end{equation}
+	Now, plugging in any $x\in\ell^p$ with norm 1 we get boundedness, and to see isometry we need to find a proper $x$ in $\ell^p$ that saturates the supremum.\\
+	The candidate here is $x=\sequ{x_n}$, with $x_n=sign(y_n)\cdot(y_n)^{q-1}$. We need to check followings:
+	\begin{itemize}
+		\item $x\in\ell^p$
+		\item $|\Lambda_y(x)|=\norm{y}_q\norm{x}_p$
+	\end{itemize}
+	First, we compute the p-norm of $x$:
+	\begin{equation}
+		\begin{split}
+			\norm{x}_p&=\left(\sum_{k=1}^\infty |x_n|^p\right)^{1/p}\\
+			&=\left(\sum_{k=1}^\infty |sign(y_n)\cdot(y_n)^{q-1}|^p\right)^{1/p}\\
+			&=\left(\sum_{k=1}^\infty |(y_n)^{q-1}|^p\right)^{1/p}\\
+			\text{(Hölder:pq-p=q)}&=\left(\sum_{k=1}^\infty |(y_n)|^q\right)^{1/p}\\
+			&=\left(\sum_{k=1}^\infty |(y_n)|^q\right)^{(1/q)\cdot (q/p)}\\
+			&=\norm{y}_q^{q/p}<\infty
+		\end{split}
+	\end{equation}
+	This gives that $x\in\ell^p$. Then
+	\begin{equation}
+		\begin{split}
+			\Lambda_y(x)&=\sum_{k=1}^{\infty}x_ny_n\\
+			&=\sum_{k=1}^{\infty}(sign(y_n)\cdot(y_n)^{q-1}\cdot y_n)\\
+			&=\sum_{k=1}^{\infty}|y_n|^q\\
+			&=\norm{y}_q^q
+		\end{split}
+	\end{equation}
+	Thus we have that 
+	\begin{equation}
+		\begin{split}
+			\frac{|\Lambda_y(x)|}{\norm{x}}&=\frac{|\norm{y}_q^q|}{\norm{y}_q^{q/p}}\\
+			&=\norm{y}_q^{q-{q/p}}\\
+			&=\norm{y}_q
+		\end{split}
+	\end{equation}
+	Which shows isometry. 
+	{\bf{STEP II}}\\
 \end{theorem}
 
 
 \subsubsection{Dual operator}\label{dual operator}
+\begin{definition}[dual operator]\rm\nextline
+	Let $X$, $Y$ be Banach spaces, with norm $\norm{\cdot}_X$ and $\norm{\cdot}_Y$. Let A be an operator from $X$ to $Y$ : \func{A}{X}{Y}. \\
+	Then dual operator of $A$, \func{A^*}{Y^*}{X^*} is defined as follows:
+	$$
+	A^*y^*=y^* A:x\rightarrow \real,\quad \forall y^*\in Y^*
+	$$
+	Adopting the notation of bracket, which means to write a linear functional $l$ acting on an element $x$: $l(x)$ to be $\inne{l}{x}$, dual operator can be rewritten in this way:
+	$$
+	\inne{A^*y^*}{x}=\inne{y^*}{Ax}
+	$$
+\end{definition}
+\begin{remark}
+	\rm This bracket here does not stand for inner product in Banach space. However it's used in a way such that this notation coincides with the adjoint under Hilbert space. This means that under Hilbert space context, one can think of this as an inner product, as every linear functional can be uniquely represented by an element in Hilbert space by Riesz representation theorem.
+\end{remark}

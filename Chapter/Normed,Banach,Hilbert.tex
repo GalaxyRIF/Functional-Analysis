@@ -78,7 +78,7 @@ One should pay attention that a considerable portion of content in this chapter 
 \begin{example}[L-p spaces]\rm\label{lp space1}\nextline
 	L-p spaces are function spaces with finite $p-norm$. Let $(S,\Sigma,\mu)$ be measure space, $p\in[1,+\infty]$. L-p space consists of functions $S\xrightarrow{}\mathbb{C}$ with $p-norm$:
 	$$\norm{f}_p\equiv\left(\int_S|f|^p \,d\mu\right)^\frac{1}{p}<\infty$$
-	It is not obvious how $p-norm$ really gives a norm, the difficulties lie in the part of proving the triangular inequality. In the specific background of L-p spaces, the inequality is precisely \textit{Minkowski inequality}. Detailed material on Hölder's inequality and Minkowski's inequality are put in appendix.
+	It is not obvious how $p-norm$ really gives a norm, the difficulties lie in the part of proving the triangular inequality. In the specific background of L-p spaces, the inequality is precisely \textit{Minkowski's inequality}. Detailed material on Hölder's inequality and Minkowski's inequality are put in appendix.
 \end{example}
 
 
@@ -242,7 +242,7 @@ Contraction mapping theorem, sometimes called Banach fixed point theorem,it guar
 		d(f(x),f(y))\leq qd(x,y),\,\forall x,y\in X,
 	$
 	where $q<1$ is a fixed constant.
-	Then $f$ admits a unqiue fixed point $x^*\in X$, which can be found by
+	Then $f$ admits a unique fixed point $x^*\in X$, which can be found by
 	defining sequence ${x_n}$ in $X$, with $x_{n+1}=f(x_n)$, then $\lim_{n\to \infty}x_n=x^*$\\
 	\textit{proof}:\\
 	By assumption, we have $\norm{x_n+1-x_n}=\norm{f(x_n)-f(x_{n+1})}\leq q\norm{x_n-x_{n+1}}$.\\
@@ -341,7 +341,7 @@ One may also say, Hilbert space is a complete inner product space. The following
 	$$
 		\inne{x}{y}=\sum_{i=1}^n {\overline{x_i}}\,y_i
 	$$
-	is a Hilbert space. This is a generalisation of last example. Still, this is a finite-dimensional Hilbert space.
+	is a Hilbert space. This is a generalization of last example. Still, this is a finite-dimensional Hilbert space.
 \end{example}
 
 \begin{example}[Sequence space]\rm\nextline
@@ -357,10 +357,10 @@ One may also say, Hilbert space is a complete inner product space. The following
 
 
 \subsection{Hilbert space Geometry}
-Structure of inner product allows disscussion for nice geometric property of Hilbert spaces. This includes orthogonality, angles and nearest distance etc.
+Structure of inner product allows discussion for nice geometric property of Hilbert spaces. This includes orthogonality, angles and nearest distance etc.
 
 \subsubsection{Orthogonality}
-Orthogonality is the generalisation of two lines being perpendicular. In euclidean geometry, we have Pythagorean theorem closely related to such property. Results on orthogonality in Hilbert spaces in many ways resemble their Euclidean version.
+Orthogonality is the generalization of two lines being perpendicular. In euclidean geometry, we have Pythagorean theorem closely related to such property. Results on orthogonality in Hilbert spaces in many ways resemble their Euclidean version.
 \begin{definition}[Orthogonality]\rm\nextline
 	Let $\mathscr{H}$ be a Hilbert space and $f\in\mathscr{H}$. Say $g$ is orthogonal to $f$ if $\inne{f}{g}=0$, writes $f\perp g$. For two sets $A,B\in \mathscr{H}$, write $A\perp B$ if $a\perp b$ for all $a\in A$ and $b\in B$
 
@@ -369,7 +369,7 @@ Orthogonality is the generalisation of two lines being perpendicular. In euclide
 
 \begin{definition}[Orthogonal Complement]\rm\label{ortho comp}\nextline
 	Let $A$ be a set in Hilbert space $\mathscr{H}$. Its orthogonal complement, $A^{\perp}$ is the set of all vectors $f \in \mathscr{H}$ such
-	that $f\perp g\,,\forall g \in A$. $A^\perp$ is always a subset of $\mathscr{H}$. Moreover, $A^\perp=\cup_{a\in A}(a)^\perp$, and we can prove thay $A^\perp$ is always a closed subset of \hbs.
+	that $f\perp g\,,\forall g \in A$. $A^\perp$ is always a subset of $\mathscr{H}$. Moreover, $A^\perp=\cup_{a\in A}(a)^\perp$, and we can prove that $A^\perp$ is always a closed subset of \hbs.
 \end{definition}
 
 \begin{proposition}[Pythagorean Theorem]\rm\nextline
@@ -426,7 +426,7 @@ Orthogonality is the generalisation of two lines being perpendicular. In euclide
 
 
 \subsubsection{Nearest Point Property}
-In Euclidean geometry, choosing a point and a line we can find the minimal distance form the point to any point on the line, defined as the distance from the point to the line. This can be generalised, with line extending to a {\bf{\emph{closed convex set}}} and space becoming a Hilbert space.
+In Euclidean geometry, choosing a point and a line we can find the minimal distance form the point to any point on the line, defined as the distance from the point to the line. This can be generalized, with line extending to a {\bf{\emph{closed convex set}}} and space becoming a Hilbert space.
 
 
 \begin{definition}[Convexity]\rm\label{convexity}\nextline
@@ -499,7 +499,7 @@ Intuitively, this means that given any two points in the a convex set, the "segm
 		\item $\norm{Px}^2+\norm{Qx}^2=\norm{x}^2$
 		\item $P$ and $Q$ are linear maps
 		\item $Px$ is the closest vector in $M$ to x.
-		\item $Qx$ is the closest vettor in $M^\perp$ to x.
+		\item $Qx$ is the closest vector in $M^\perp$ to x.
 	\end{enumerate}
 	\textit{proof:}\\
 	We shall use nearest point property. Since $M$ is a closed subspace, it is clearly a convex subset of \hbs. Thus for each $x\in \hbp$ there exists a unique point in $M$ that is closest to $x$. So we define $Px$ to be the unique nearest point in $M$ for each x. Uniqueness of nearest point gives the uniqueness of mapping $P$. $Q$ is then defined as $x-Px$. We should show that this definition of $Q$ indeed gives a mapping from \hbs to $M^\perp$.\\
