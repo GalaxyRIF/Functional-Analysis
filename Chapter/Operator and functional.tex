@@ -308,7 +308,7 @@ We have shown that dual space of a Banach space is Banach, what about dual space
 	Taking $n$ and $m$ to infinity we have that $\norm{x_m-x_n}\to 0$, which means that $(x_n)_1^\infty$ is Cauchy.
 \end{remark}
 \begin{theorem}[Dual space of Hilbert space]\label{dual space Hilbert}\rm\nextline
-	Let $\hbp$ be a Hilbert space, then its dual space $\hbp^*$ is isomorphic to  itself: $\hbp\cong\hbp^*$, moreover, the natural norm on them is an isometry.\placeholder
+	Let $\hbp$ be a Hilbert space, then its dual space $\hbp^*$ is isomorphic to  itself: $\hbp\cong\hbp^*$, moreover, the natural norm on them is an isometry, which means that the operator norm of a linear functional equals the element that generates this functional by inner product. This is an immediate corollary from results of \hyperref[Riesz representation theory]{Riesz representation theory}.
 \end{theorem}
 
 \subsubsection{Dual space of lp space}\label{lp dual}
@@ -368,8 +368,41 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 			&=\norm{y}_q
 		\end{split}
 	\end{equation}
-	Which shows isometry. 
+	Which shows isometry. \\
 	{\bf{STEP II}}\\
+	Now let us assume $l\in(\ell^p)^*$. We define natural basis of an $\ell^q$ space: $e_n=\sequ{(e_n)_k}$ , where $(e_n)_k=1$ if $k=n$, otherwise $(e_n)_k=0$. Each $e_n$ is a sequence with all entries zero, except at $k-th$ entry the value is 1. Now consider a sequence of $y_n=\sum_{k=1}^nl(e_k)\cdot e_k$,i.e. $y_n$ is a sequence where $(y_n)_k=l(e_k)$ for $k\leq n$. By denoting $x^n$ to be the sequence with first n-terms equals to corresponding term of x and any term afterwards set to zero, we claim the following three things:
+	\begin{itemize}
+		\item $y_n\in\ell^q$ for all $n\in\natu$. 
+		\item $l(x^{(n)})=\sum_{k=1}^nx_k(y_n)_k$
+		\item $\lim_{n\to\infty}\norm{l(x)-xy_n}=0$
+	\end{itemize}
+	First, note that each $y_n$ is a finite sum, its q-norm is finite, hence $y_n\in\ell^q$ for all $n\in\natu$.  Then we notice that we can express $x^(n)$ as a finite summation:
+	$$
+	x^{(n)}=\sum_{k=1}^nx_ke_k\implies l(x^{(n)})=\sum_{k=1}^nl(x_ke_k)=\sum_{k=1}^nx_k\cdot l(e_k)
+	$$
+	Then the second statement is clear.
+	$$
+	\sum_{k=1}^nx_k(y_n)_k=\sum_{k=1}^nx_k\cdot l(e_k)=l(x^{(n)})
+	$$
+	For the last statement, we use separability of any $\ell^p$ space and express $x$ uniquely by canonical Schauder basis $e_k$: $x=\sum_{k=1}^\infty x_ke_k$. Thus for any $\varepsilon>0$, an index $s\in\natu$ such that 
+	$$
+	\norm{y_nx-y_nx^{(n)}}\leq
+	\norm{x-x^{(n)}}\cdot\norm{y_n}
+	<\varepsilon/2
+	$$.
+	Then, by continuity (boundedness) of $l$, we can choose another index $t\in\natu$ such that 
+	$$
+	\norm{l(x)-l(x^{(n)})}<\varepsilon/2
+	$$
+	Then 
+	\begin{equation}
+		\begin{split}
+			\norm{l(x)-y_nx}&=\norm{l(x)-l(x^{(n)})+y_nx^{(n)}-y_nx}\\
+			&\leq\norm{l(x)-l(x^{(n)})}+\norm{y_nx^{(n)}-y_nx}\\
+			&<2\varepsilon/2=\varepsilon
+		\end{split}
+	\end{equation}
+	By letting $n\to\infty$ we have that that $x\lim_{n\to\infty}y_n=l(x)$ for all $x\in\ell^p$. Thus we can define $y=\lim_{n\to\infty}y_n$. $y$ is an element of $\ell^q$ since $\sequ{y_n}$ is Cauchy, since the different of any $y_m$ and $y_n$ is the partial sum from m-th term to n-th term of a sequence that converges in q-norm, and thus can be arbitrarily small when n and m goes to infinity. Existence and uniqueness of $y$ is then follows from completeness of $\ell^q$. This shows that every linear functional in $(\ell^p)^*$ uniquely gives an element in $\ell^q$, which proves that $\Lambda_y$ is a surjection, hence we have an isomorphism as stated: $(\ell^p)^*\cong\ell^q$.
 \end{theorem}
 
 

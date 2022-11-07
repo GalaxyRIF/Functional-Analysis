@@ -8,7 +8,13 @@
 \usepackage{comment}
 \usepackage{enumerate}
 \usepackage{xcolor}
+\usepackage{titlesec}
 \usepackage[hidelinks,backref]{hyperref}
+\titleformat*{\section}{\LARGE\bfseries}
+\titleformat*{\subsection}{\Large\bfseries}
+\titleformat*{\subsubsection}{\Large\bfseries}
+\titleformat*{\paragraph}{\large\bfseries}
+\titleformat*{\subparagraph}{\large\bfseries}
 \title{Functional Analysis}
 \author{RIF Galaxy }
 \date{August 2022}
@@ -40,6 +46,8 @@ The note is made prior to the course taking place, and will be updated according
 \newcommand{\placeholder}{{\color{red} NOOOOOOT COMPLEEEEEEET! COOOOOOOM BAAAAAACK!!!}}
 \newcommand{\sequ}[1]{\left({#1}\right)_1^\infty}
 
+
+
 \newtheorem{example}{Example}[subsection]
 \newtheorem{definition}[example]{Definition}
 \newtheorem{proposition}[example]{Proposition}
@@ -48,6 +56,8 @@ The note is made prior to the course taking place, and will be updated according
 \newtheorem{lemma}[example]{Lemma}
 \newtheorem{corollary}[example]{Corollary}
 \tableofcontents
+
+
 
 \input{Chapter/Content.tex}
 \input{Chapter/Linear space Preliminaries.tex}
