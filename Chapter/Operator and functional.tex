@@ -276,8 +276,8 @@ We have shown that dual space of a Banach space is Banach, what about dual space
 	The result shows that \hbs=$\dual\hbp$ in the sense that the ma from $h$ to corresponding linear functional is an isometry: $\norm{h}=\norm{T}$
 \end{theorem}
 \begin{remark}[Alternative proof of Riesz Representation theorem]\rm\nextline
-	The proof above is purely algebraic, in the sense that no analysis is used. However, one may realise that the proof relies heavily on the construction of $T(x)w-x$, which may not be that easy to thought of. Hence another completely different proof is presented here. \\
-	\pf\\
+	The proof above is purely algebraic, in the sense that no analysis is used. However, one may realise that the proof relies heavily on the construction of $T(x)w-x$, which may not be that easy to thought of. Hence another completely different proof is presented here. 
+	\begin{pf}{Riesz Representation theorem}{}
 	The idea of the proof is to construct a sequence of points that finally converges to the desired $h_0$.\\
 	If $\norm{T}=0$, we simply choose $h_0=0$.\\
 	If not, without loss of generality, let's consider operators with norm equal to 1.We first show existence of such $h_0$. Let $T\in\hbp^*$ be such that $\norm{T}=1$.\\
@@ -306,6 +306,7 @@ We have shown that dual space of a Banach space is Banach, what about dual space
 		\end{split}
 	\end{equation}
 	Taking $n$ and $m$ to infinity we have that $\norm{x_m-x_n}\to 0$, which means that $(x_n)_1^\infty$ is Cauchy.
+	\end{pf}
 \end{remark}
 \begin{theorem}[Dual space of Hilbert space]\label{dual space Hilbert}\rm\nextline
 	Let $\hbp$ be a Hilbert space, then its dual space $\hbp^*$ is isomorphic to  itself: $\hbp\cong\hbp^*$, moreover, the natural norm on them is an isometry, which means that the operator norm of a linear functional equals the element that generates this functional by inner product. This is an immediate corollary from results of \hyperref[Riesz representation theory]{Riesz representation theory}.
@@ -316,7 +317,7 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 
 \begin{theorem}[Dual of \texorpdfstring{$\ell^p$}.]\rm\nextline
 	Let $p\in (1,\infty)$, then $(\ell^p)^*\cong\ell^q $, where $1/p+1/q=1$.\\
-	\pf\\
+	\prf\\
 	The proof has two parts. First we show that every element  $y\in\ell^q$ uniquely defines a linear linear functional \func{\Lambda_y}{X}{\real}, then we prove surjectivity, which means that every functional $l\in(\ell^p)^*$ can be uniquely represented by an element in $\ell^q$. Equation $1/p+1/q=1$ and its variation like $p+q=pq$ and  $1+q/p=q$ will be useful at some steps.\\
 	{\bf{STEP I}}\\
 	Let $y=\sequ{y_n}\in\ell^q$,,define \func{\Lambda_y}{X}{\real}, by 

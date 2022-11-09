@@ -103,67 +103,70 @@ There are many norms. Some acts similarly, some acts differently. One may have s
 
 \begin{theorem}[Equivalence of finite dimensional norms]\rm\nextline
 	Let $X$ be a finite dimensional vector space, then any two norms $\norm{\cdot}_a$ and $\norm{\cdot}_b$ are equivalent.\\
-	\pf The proof are divided into four steps:
+	\prf The proof are divided into four steps:
 	\begin{itemize}
 		\item Showing that equivalence of norm is transitive
 		\item Showing that equivalence of equivalence on unit sphere implies equivalence on $X$
 		\item Showing that any norm is continuous with respect to $\norm{\cdot}_1$
 		\item Showing that any norm is equivalent to $\norm{x}_1\equiv\sum_{s=1}^n |x_s|$
 	\end{itemize}
-	{\bf STEP I}\\
-	Let $\norm{\cdot}_a$ be equivalent to $\norm{\cdot}_b$ and $\norm{\cdot}_b$ equivalent to $\norm{\cdot}_c$.
-	Then $\exists m_1,m_2,M_1,M_2>0$ with
-	\begin{equation}
-		\begin{split}\nonumber
-			&m_1\norm{x}_a\leq \norm{x}_b\leq M_1\norm{x}_a,\,\,\forall x\in X\\
-			&m_2\norm{x}_b\leq \norm{x}_c\leq M_2\norm{x}_b,\,\,\forall x\in X
-		\end{split}
-	\end{equation}
-	Then
-	\begin{equation}
-		\begin{split}\nonumber
-			&m_1m_2\norm{x}_a\leq m_2\norm{x}_b\leq \norm{x}_c,\,\,\forall x\in X\\
-			&\norm{x}_c\leq M_2\norm{x}_b\leq M_1M_2\norm{x}_c\,\,\forall x\in X
-		\end{split}
-	\end{equation}
-	Which gives $m_1m_2\norm{x}_a\leq\norm{c}\leq M_1M_2\norm{x}_a$ for arbitrary $x$. Hence $\norm{\cdot}_a$ and$\norm{\cdot}_c$ are equivalent.\\
-	{\bf STEP II}\\
-	Now let us assume that $\norm{\cdot}_a$ is equivalent to $\norm{\cdot}_b$ on $U_a=\{s\in X:\norm{s}_a=1\}$.
-	Then let $x\in X$ be non-zero. Then we have
-	$$
-		m\norm{\frac{x}{\norm{x}_a}}_a\leq \norm{\frac{x}{\norm{x}_a}}_b\leq M\norm{\frac{x}{\norm{x}_a}}_a
-	$$
-	So
-	$$
-		m\norm{x}_a\frac{1}{\norm{x}_a}\leq \norm{x}_b\frac{1}{\norm{x}_a}\leq M\norm{x}_a\frac{1}{\norm{x}_a}
-	$$
-	And since ${\norm{x}_a}$ is non-zero,we have that
-	$$
-		m{\norm{x}_a}\leq \norm{x}_b\leq M\norm{x}_a
-	$$
-	Now since $x$ is arbitrary, the proof is completed.\\
-	{\bf STEP III}\\
-	Now we shall proof continuity of any norm under $\norm\cdot _1$. This can be done by showing for a sequence $(x_n)$ converging to $x$ under the metric induced by $\norm{\cdot}_1$, the norm if its terms under $\norm{\cdot}_a$ converges to $\norm{x}_a$\\. So let $(x_n)$ be a sequence in $X$ with $x_n\xrightarrow[]{n\to \infty}x$. We have
-	\begin{equation}
-		\begin{split}\nonumber
-			|\norm{x_n}_a-\norm{x}_a|&\leq\norm{x_n-x}_a\\
-			&\leq M\norm{x_n-x}_1\to0\quad \text{when}\,\,n\to\infty
-		\end{split}
-	\end{equation}
-	Thus
-	$$
-		\lim_{n\to\infty}|\norm{x_n}_a-\norm{x}_a|=0
-	$$
-	Which completes the proof.\\
-	{\bf STEP IV}\\
+	\begin{pf}{STEP I}{}
+		Let $\norm{\cdot}_a$ be equivalent to $\norm{\cdot}_b$ and $\norm{\cdot}_b$ equivalent to $\norm{\cdot}_c$.
+		Then $\exists m_1,m_2,M_1,M_2>0$ with
+		\begin{equation}
+			\begin{split}\nonumber
+				&m_1\norm{x}_a\leq \norm{x}_b\leq M_1\norm{x}_a,\,\,\forall x\in X\\
+				&m_2\norm{x}_b\leq \norm{x}_c\leq M_2\norm{x}_b,\,\,\forall x\in X
+			\end{split}
+		\end{equation}
+		Then
+		\begin{equation}
+			\begin{split}\nonumber
+				&m_1m_2\norm{x}_a\leq m_2\norm{x}_b\leq \norm{x}_c,\,\,\forall x\in X\\
+				&\norm{x}_c\leq M_2\norm{x}_b\leq M_1M_2\norm{x}_c\,\,\forall x\in X
+			\end{split}
+		\end{equation}
+		Which gives $m_1m_2\norm{x}_a\leq\norm{c}\leq M_1M_2\norm{x}_a$ for arbitrary $x$. Hence $\norm{\cdot}_a$ and$\norm{\cdot}_c$ are equivalent.
+	\end{pf}
+	\begin{pf}{STEP II}{}
+		Now let us assume that $\norm{\cdot}_a$ is equivalent to $\norm{\cdot}_b$ on $U_a=\{s\in X:\norm{s}_a=1\}$.
+		Then let $x\in X$ be non-zero. Then we have
+		$$
+			m\norm{\frac{x}{\norm{x}_a}}_a\leq \norm{\frac{x}{\norm{x}_a}}_b\leq M\norm{\frac{x}{\norm{x}_a}}_a
+		$$
+		So
+		$$
+			m\norm{x}_a\frac{1}{\norm{x}_a}\leq \norm{x}_b\frac{1}{\norm{x}_a}\leq M\norm{x}_a\frac{1}{\norm{x}_a}
+		$$
+		And since ${\norm{x}_a}$ is non-zero,we have that
+		$$
+			m{\norm{x}_a}\leq \norm{x}_b\leq M\norm{x}_a
+		$$
+		Now since $x$ is arbitrary, the proof is completed.	
+	\end{pf}
+	\begin{pf}{STEP III}{}
+		Now we shall proof continuity of any norm under $\norm\cdot _1$. This can be done by showing for a sequence $(x_n)$ converging to $x$ under the metric induced by $\norm{\cdot}_1$, the norm if its terms under $\norm{\cdot}_a$ converges to $\norm{x}_a$\\. So let $(x_n)$ be a sequence in $X$ with $x_n\xrightarrow[]{n\to \infty}x$. We have
+		\begin{equation}
+			\begin{split}\nonumber
+				|\norm{x_n}_a-\norm{x}_a|&\leq\norm{x_n-x}_a\\
+				&\leq M\norm{x_n-x}_1\to0\quad \text{when}\,\,n\to\infty
+			\end{split}
+		\end{equation}
+		Thus
+		$$
+			\lim_{n\to\infty}|\norm{x_n}_a-\norm{x}_a|=0
+		$$
+		Which completes the proof.
+	\end{pf}
+\begin{pf}{STEP IV}{}
 	Now we shall apply extreme value theorem to obtain our final result here. Using the theorem requires unit sphere to be a compact set. Proof of this fact is given later, one should realise that the proof does not depend on equivalence of norms, as we only require compactness in $X,\norm{\cdot}_1$. However, it is true that unit sphere is compact under any norm in finite dimensional cases.\\
 	So we have that $U_1=\{s\in X:\norm{s}_1=1\}$ is compact with  a  function $\norm{\cdot}_a$ continuous on it, so by extreme value theorem it attains maximum $M_U=max\{\norm{x}_a:x\in U_1\}$ and minimum $m_u=min\{\norm{x}_a:x\in U_1\}$ on $U_1$, thus for any $x\in U_1$ we have
 	$$
 		m_u \norm{x}_1=m_u\leq\norm{x}_a\leq M_u=M_u \norm{x}_1
 	$$
-	Hence we show that any norm is equivalent to $\norm{\cdot}_1$ on unit sphere.\\
-	{\bf FINALLY}\\
-	By combining the results of the four steps, we finish the proof of the theorem.
+	Hence we show that any norm is equivalent to $\norm{\cdot}_1$ on unit sphere.
+\end{pf}
+By combining the results of the four steps, we finish the proof of the theorem.
 \end{theorem}
 
 \begin{remark}\rm\nextline
@@ -172,8 +175,8 @@ There are many norms. Some acts similarly, some acts differently. One may have s
 Following results are simple exercises to check statements above.
 
 \begin{proposition}[Equivalence of openness]\rm\nextline
-	Open sets in $(X,\norm{\cdot}_a)$ are open in $(X,\norm{\cdot}_b)$ (Following notation in definition of equivalent norms).\\
-	\pf
+	Open sets in $(X,\norm{\cdot}_a)$ are open in $(X,\norm{\cdot}_b)$ (Following notation in definition of equivalent norms).
+	\begin{pf}{}{}
 	It suffices to check open balls. Let $B^a_x(r)\equiv\{s\in X:\norm{x-s}_a<r\}$ be open balls with radius $r>0$ centered at $x$, which is an open ball in $(X,\norm{\cdot}_a)$. Choose $p\in B^a_x(r)$, we should show that $\exists \varepsilon>0$ with $B^b_p(\varepsilon)\equiv\{s\in X:\norm{p-s}_b<\varepsilon\}\subset B^a_x(r)$.\\
 	By openness of $B^a_x(r)$, we have that $\exists \varepsilon_a>0$ with
 	\begin{equation}
@@ -185,6 +188,8 @@ Following results are simple exercises to check statements above.
 		\end{split}
 	\end{equation}
 	Note that $B^b_p(m\varepsilon_a)\subseteq B^a_p(\varepsilon_a)\subset B^a_x(r)$, hence $\varepsilon=m\varepsilon_a$.
+	\end{pf}
+	
 \end{proposition}
 
 

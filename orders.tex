@@ -13,7 +13,7 @@
 \newcommand{\dual}[1]{{#1}^*}
 \newcommand{\sequ}[1]{\left({#1}\right)_1^\infty}
 \newcommand{\func}[3]{${#1}:{#2}\xrightarrow{}{#3}$}
-\newcommand{\pf}{\textit{proof}:   }
+\newcommand{\prf}{\textit{proof}:   }
 
 \newcommand{\cgr}[3]{{#1}\equiv {#2} \,(\bmod \,\,{#3})}
 \newcommand{\ncgr}[3]{{#1}\not\equiv {#2} \,(\bmod \,\,{#3})}
@@ -36,3 +36,26 @@
 \newtheorem{theorem}[example]{Theorem}
 \newtheorem{lemma}[example]{Lemma}
 \newtheorem{corollary}[example]{Corollary}
+
+
+\newtcbtheorem[no counter]{pf}{Proof}{
+  enhanced,
+  rounded corners,
+  attach boxed title to top,
+  colback=white,
+  colframe=black!25,
+  fonttitle=\bfseries,
+  coltitle=black,
+  boxed title style={
+    rounded corners,
+    size=small,
+    colback=black!25,
+    colframe=black!25,
+  } 
+}{prf}
+
+\begin{comment}
+\begin{pf}{Name}{Hyper}
+    asdassad
+\end{pf}
+\end{comment}
