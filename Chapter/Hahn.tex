@@ -45,7 +45,7 @@ To prove the theorem, the idea is first to show that we can extend linear functi
 		\item $T_{n+1}(x)=T_n(x)$ for all $x\in X_n$
 		\item $\norm{T_{n+1}}=\norm{T_n}$
 	\end{itemize}
-	\textit{proof}:\\
+	\begin{pf}{One-dimensional extension}{}
 	Define linear functional $P:X_{n+1}\xrightarrow{}\mathbb{R}$ by
 	$$
 		P(x+kv)=T_n(x)-Ck,\,\forall\,x\in X_n,\,k\in\mathbb{R}
@@ -88,6 +88,7 @@ To prove the theorem, the idea is first to show that we can extend linear functi
 		T_n(x)-\norm{x+kv}\leq l^-\leq Ck\leq l^+ \leq T_n(x)+\norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
 	$$
 	Which finishes the proof.
+\end{pf}
 \end{lemma}
 \subsection{Proof of Hahn-Banach theorem,real case}
 Starting from $T_0:Y\xrightarrow{}\mathbb{R}$, by \ref{ODEX} we can define  $T_{n+1}$ to be the one-dimensional extension of $T_n$ for any $n\in\mathbb{N}$, with domain $Y_{n+1}$ extended from $Y_n$, for convenience we let$Y_0=Y$.
@@ -141,3 +142,20 @@ To prove the statement for complex case, we shall exploit a connection between r
 	Hence $\norm{T}=\norm{u}$.
 \end{proposition}
 The remaining part of the proof is simply combining last result and the proof of real case. However, last result also gives a insight on complex bounded linear functional
+
+\subsection{Hahn-Banach with sublinear function}
+Previous discussion of Hahn Banach theorem considers extension preserving norm. However, we can consider extension in a more general setting, namely sublinear.
+\begin{definition}[sublinear function]\rm\nextline
+	Let $X$ be a vector space. \func{p}{X}{\real} is a sublinear function if the following holdsL
+	\begin{itemize}
+		\item $p(kx)=kp(x),$ for all $x\in X$ and $k\geq0$
+		\item $p(x+y)=p(x)+p(y),\,\,\forall x,y\in X$
+	\end{itemize}
+\end{definition}
+
+\begin{definition}[Restriction]\rm\nextline
+	Let \func{f}{X}{Y}. Let $S\subset X$, if \func{g}{M}{Y} is such that $g(x)=f(x),\,\,\forall x\in M$ then we say $f$ restricted to $M$ is $g$, denoted by $g=f|_M$	
+\end{definition}
+\begin{theorem}[Hahn-Banach Theorem, sublinear]\rm\nextline 
+	
+\end{theorem}

@@ -318,8 +318,8 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 \begin{theorem}[Dual of \texorpdfstring{$\ell^p$}.]\rm\nextline
 	Let $p\in (1,\infty)$, then $(\ell^p)^*\cong\ell^q $, where $1/p+1/q=1$.\\
 	\prf\\
-	The proof has two parts. First we show that every element  $y\in\ell^q$ uniquely defines a linear linear functional \func{\Lambda_y}{X}{\real}, then we prove surjectivity, which means that every functional $l\in(\ell^p)^*$ can be uniquely represented by an element in $\ell^q$. Equation $1/p+1/q=1$ and its variation like $p+q=pq$ and  $1+q/p=q$ will be useful at some steps.\\
-	{\bf{STEP I}}\\
+	The proof has two parts. First we show that every element  $y\in\ell^q$ uniquely defines a linear linear functional \func{\Lambda_y}{X}{\real}, then we prove surjectivity, which means that every functional $l\in(\ell^p)^*$ can be uniquely represented by an element in $\ell^q$. Equation $1/p+1/q=1$ and its variation like $p+q=pq$ and  $1+q/p=q$ will be useful at some steps.
+	\begin{pf}{STEP I}{}
 	Let $y=\sequ{y_n}\in\ell^q$,,define \func{\Lambda_y}{X}{\real}, by 
 	$$\Lambda_y(x)=\sum_{k=1}^{\infty}x_ny_n,\,\,\forall x=\sequ{x_n}\in\ell^p$$
 	We claim that:\begin{itemize}
@@ -327,6 +327,7 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 		\item $\norm{\Lambda_y}\equiv\sup\{|\Lambda_y(x)|:\norm{x}_p=1\}=\norm{y}_q$, i.e. the map $y\rightarrow\Lambda_y$ is an isometry.
 	\end{itemize}
 	Linearity immediately follows from definition. To check boundedness, we notice that
+	\begin{comment}
 	\begin{equation}
 		\begin{split}
 		\left|\Lambda_y(x)\right|&=\left|\sum_{k=1}^{\infty}x_ny_n\right|\\
@@ -334,6 +335,13 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 		&\leq\norm{xy}_1\\
 		\text{(Hölder)}\quad&\leq\norm{x}_p\norm{y}_q
 		\end{split}
+	\end{equation}
+	\end{comment}
+	\begin{equation}
+		\left|\Lambda_y(x)\right|=\left|\sum_{k=1}^{\infty}x_ny_n\right|
+		\leq\sum_{k=1}^{\infty}|x_ny_n|
+		\leq\norm{xy}_1
+		\quad\leq\norm{x}_p\norm{y}_q
 	\end{equation}
 	Now, plugging in any $x\in\ell^p$ with norm 1 we get boundedness, and to see isometry we need to find a proper $x$ in $\ell^p$ that saturates the supremum.\\
 	The candidate here is $x=\sequ{x_n}$, with $x_n=sign(y_n)\cdot(y_n)^{q-1}$. We need to check followings:
@@ -344,12 +352,9 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 	First, we compute the p-norm of $x$:
 	\begin{equation}
 		\begin{split}
-			\norm{x}_p&=\left(\sum_{k=1}^\infty |x_n|^p\right)^{1/p}\\
-			&=\left(\sum_{k=1}^\infty |sign(y_n)\cdot(y_n)^{q-1}|^p\right)^{1/p}\\
-			&=\left(\sum_{k=1}^\infty |(y_n)^{q-1}|^p\right)^{1/p}\\
-			\text{(Hölder:pq-p=q)}&=\left(\sum_{k=1}^\infty |(y_n)|^q\right)^{1/p}\\
-			&=\left(\sum_{k=1}^\infty |(y_n)|^q\right)^{(1/q)\cdot (q/p)}\\
-			&=\norm{y}_q^{q/p}<\infty
+			\norm{x}_p&=\left(\sum_{k=1}^\infty |x_n|^p\right)^{1/p}=\left(\sum_{k=1}^\infty |sign(y_n)\cdot(y_n)^{q-1}|^p\right)^{1/p}\\
+			&=\left(\sum_{k=1}^\infty |(y_n)^{q-1}|^p\right)^{1/p}=\left(\sum_{k=1}^\infty |(y_n)|^q\right)^{1/p}\\
+			&=\left(\sum_{k=1}^\infty |(y_n)|^q\right)^{(1/q)\cdot (q/p)}=\norm{y}_q^{q/p}<\infty
 		\end{split}
 	\end{equation}
 	This gives that $x\in\ell^p$. Then
@@ -370,7 +375,8 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 		\end{split}
 	\end{equation}
 	Which shows isometry. \\
-	{\bf{STEP II}}\\
+\end{pf}
+\begin{pf}{STEP II}{}
 	Now let us assume $l\in(\ell^p)^*$. We define natural basis of an $\ell^q$ space: $e_n=\sequ{(e_n)_k}$ , where $(e_n)_k=1$ if $k=n$, otherwise $(e_n)_k=0$. Each $e_n$ is a sequence with all entries zero, except at $k-th$ entry the value is 1. Now consider a sequence of $y_n=\sum_{k=1}^nl(e_k)\cdot e_k$,i.e. $y_n$ is a sequence where $(y_n)_k=l(e_k)$ for $k\leq n$. By denoting $x^n$ to be the sequence with first n-terms equals to corresponding term of x and any term afterwards set to zero, we claim the following three things:
 	\begin{itemize}
 		\item $y_n\in\ell^q$ for all $n\in\natu$. 
@@ -404,6 +410,7 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 		\end{split}
 	\end{equation}
 	By letting $n\to\infty$ we have that that $x\lim_{n\to\infty}y_n=l(x)$ for all $x\in\ell^p$. Thus we can define $y=\lim_{n\to\infty}y_n$. $y$ is an element of $\ell^q$ since $\sequ{y_n}$ is Cauchy, since the different of any $y_m$ and $y_n$ is the partial sum from m-th term to n-th term of a sequence that converges in q-norm, and thus can be arbitrarily small when n and m goes to infinity. Existence and uniqueness of $y$ is then follows from completeness of $\ell^q$. This shows that every linear functional in $(\ell^p)^*$ uniquely gives an element in $\ell^q$, which proves that $\Lambda_y$ is a surjection, hence we have an isomorphism as stated: $(\ell^p)^*\cong\ell^q$.
+\end{pf}
 \end{theorem}
 
 
