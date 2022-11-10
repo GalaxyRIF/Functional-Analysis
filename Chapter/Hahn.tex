@@ -1,5 +1,5 @@
 \newpage
-\section{Hahn-Banach Theorem}
+\section{Hahn-Banach Theorem}\label{Hahn-Banach Theorem}
 One of the most import results in functional analysis, {\bf Hahn-Banach theorem} is a theorem dealing with extending linear maps from a subspace to the whole space. The theorem says that any bounded linear functional defined on a subspace can be  extended to the whole space, while preserving the norm. The result does not rely on completeness of the space, so it's a result for all normed linear spaces. The proof of this theorem involves using a version of \textit{\bf axiom of choice (AC) }, Zorn's lemma. We shall review this lemma first.
 
 \begin{definition}[Partial Order]\rm \nextline
@@ -23,7 +23,7 @@ One of the most import results in functional analysis, {\bf Hahn-Banach theorem}
 	Let $X$ be a set partially ordered by $\leq$ and $Y\subset X$. say $x\in X$ is a maximal element of $X$ if $x\leq m$ implies $m=x$.
 
 \end{definition}
-\begin{lemma}[Zorn's lemma]\rm\nextline
+\begin{lemma}[Zorn's lemma]\label{Zorn's Lemma}\rm\nextline
 	If $X$ is a nonempty partially ordered set with the
 	property that every totally ordered subset of $X$ has an upper bound in $X$, then $X$ has
 	a maximal element.
@@ -46,49 +46,49 @@ To prove the theorem, the idea is first to show that we can extend linear functi
 		\item $\norm{T_{n+1}}=\norm{T_n}$
 	\end{itemize}
 	\begin{pf}{One-dimensional extension}{}
-	Define linear functional $P:X_{n+1}\xrightarrow{}\mathbb{R}$ by
-	$$
-		P(x+kv)=T_n(x)-Ck,\,\forall\,x\in X_n,\,k\in\mathbb{R}
-	$$
-	where C is a constant to be determined.
-	First we shall check linearity, which is left as an exercise.
-	Then we shall show that we can find a proper constant $C$ so that $\norm{P}=\norm{T_n}$. Note that $X_n\subset X_{n+1}$, so we have
-	\begin{equation}
-		\begin{split}
-			\norm{P}&=\sup_{x\in X_{n+1}}(\{|Px|:\norm{x}=1\})\\
-			&\geq\sup_{x\in X_{n}}(\{|Px|:\norm{x}=1\})\\
-			&=\sup_{x\in X_{n}}(\{|T_nx|:\norm{x}=1\})\\
-			&=1
-		\end{split}
-	\end{equation}
-	So by choosing $C$ such that $P(x+kv)\leq \norm{x+kv}$ for any $x\in X_n$ and $k\in \mathbb{R}$, we will have that $\norm{P}\leq 1$, giving $\norm{P}=1$. Thus it remains to show that we can find such a constant $C$.\\
-	We aim to find $C$ such that
-	$$
-		|P(x+kv)|=|T_n(x)-Ck|\leq \norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
-	$$
-	Hence,
-	$$
-		T_n(x)-\norm{x+kv}\leq Ck\leq T_n(x)+\norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
-	$$
-	Note that for all $x,y\in X_n$ we have:
-	\begin{equation}
-		\begin{split}
-			T_nx-T_ny&=T_n(x-y)\\
-			&\leq \norm{x-y}\\
-			&=\norm{(x+kv)-(kv+y)}\\
-			&\leq\norm{x+kv}+\norm{y+kv}
-		\end{split}
-	\end{equation}
-	Thus
-	$$
-		l^-=\sup_{x\in X_n,k\in\mathbb{R}}(T_n(x)-\norm{x+kv})\leq  \inf_{x\in X_n,k\in\mathbb{R}}(T_n(x)+\norm{x+kv})=l^+
-	$$
-	Hence we can always find a $C$ such that
-	$$
-		T_n(x)-\norm{x+kv}\leq l^-\leq Ck\leq l^+ \leq T_n(x)+\norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
-	$$
-	Which finishes the proof.
-\end{pf}
+		Define linear functional $P:X_{n+1}\xrightarrow{}\mathbb{R}$ by
+		$$
+			P(x+kv)=T_n(x)-Ck,\,\forall\,x\in X_n,\,k\in\mathbb{R}
+		$$
+		where C is a constant to be determined.
+		First we shall check linearity, which is left as an exercise.
+		Then we shall show that we can find a proper constant $C$ so that $\norm{P}=\norm{T_n}$. Note that $X_n\subset X_{n+1}$, so we have
+		\begin{equation}
+			\begin{split}
+				\norm{P}&=\sup_{x\in X_{n+1}}(\{|Px|:\norm{x}=1\})\\
+				&\geq\sup_{x\in X_{n}}(\{|Px|:\norm{x}=1\})\\
+				&=\sup_{x\in X_{n}}(\{|T_nx|:\norm{x}=1\})\\
+				&=1
+			\end{split}
+		\end{equation}
+		So by choosing $C$ such that $P(x+kv)\leq \norm{x+kv}$ for any $x\in X_n$ and $k\in \mathbb{R}$, we will have that $\norm{P}\leq 1$, giving $\norm{P}=1$. Thus it remains to show that we can find such a constant $C$.\\
+		We aim to find $C$ such that
+		$$
+			|P(x+kv)|=|T_n(x)-Ck|\leq \norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
+		$$
+		Hence,
+		$$
+			T_n(x)-\norm{x+kv}\leq Ck\leq T_n(x)+\norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
+		$$
+		Note that for all $x,y\in X_n$ we have:
+		\begin{equation}
+			\begin{split}
+				T_nx-T_ny&=T_n(x-y)\\
+				&\leq \norm{x-y}\\
+				&=\norm{(x+kv)-(kv+y)}\\
+				&\leq\norm{x+kv}+\norm{y+kv}
+			\end{split}
+		\end{equation}
+		Thus
+		$$
+			l^-=\sup_{x\in X_n,k\in\mathbb{R}}(T_n(x)-\norm{x+kv})\leq  \inf_{x\in X_n,k\in\mathbb{R}}(T_n(x)+\norm{x+kv})=l^+
+		$$
+		Hence we can always find a $C$ such that
+		$$
+			T_n(x)-\norm{x+kv}\leq l^-\leq Ck\leq l^+ \leq T_n(x)+\norm{x+kv},\,\forall x\in X_n,\,\forall k\in\mathbb{R}
+		$$
+		Which finishes the proof.
+	\end{pf}
 \end{lemma}
 \subsection{Proof of Hahn-Banach theorem,real case}
 Starting from $T_0:Y\xrightarrow{}\mathbb{R}$, by \ref{ODEX} we can define  $T_{n+1}$ to be the one-dimensional extension of $T_n$ for any $n\in\mathbb{N}$, with domain $Y_{n+1}$ extended from $Y_n$, for convenience we let$Y_0=Y$.
@@ -115,7 +115,8 @@ To prove the statement for complex case, we shall exploit a connection between r
 		\item $\norm{u}=\norm{T}$
 	\end{itemize}
 	Moreover, given any linear functional $u(x)$, $T(x)=u(x)-iu(ix)$ defines a complex linear functional
-	\textit{proof:}\\
+	\begin{pf}{}{}
+
 	The first two are very easy to show. The hardest part is on the third statement. We first show that $\norm{T}\geq\norm{u}$:
 	\begin{equation}
 		\begin{split}
@@ -140,12 +141,13 @@ To prove the statement for complex case, we shall exploit a connection between r
 		|T(e^{-i\theta}x)|=|Re(T(e^{-i\theta}x))|=|u(e^{-i\theta}x)|\leq\norm{u}
 	$$
 	Hence $\norm{T}=\norm{u}$.
+\end{pf}
 \end{proposition}
 The remaining part of the proof is simply combining last result and the proof of real case. However, last result also gives a insight on complex bounded linear functional
 
 \subsection{Hahn-Banach with sublinear function}
 Previous discussion of Hahn Banach theorem considers extension preserving norm. However, we can consider extension in a more general setting, namely sublinear.
-\begin{definition}[sublinear function]\rm\nextline
+\begin{definition}[sublinear function]\label{sublinear map}\rm\nextline
 	Let $X$ be a vector space. \func{p}{X}{\real} is a sublinear function if the following holdsL
 	\begin{itemize}
 		\item $p(kx)=kp(x),$ for all $x\in X$ and $k\geq0$
@@ -154,8 +156,40 @@ Previous discussion of Hahn Banach theorem considers extension preserving norm. 
 \end{definition}
 
 \begin{definition}[Restriction]\rm\nextline
-	Let \func{f}{X}{Y}. Let $S\subset X$, if \func{g}{M}{Y} is such that $g(x)=f(x),\,\,\forall x\in M$ then we say $f$ restricted to $M$ is $g$, denoted by $g=f|_M$	
+	Let \func{f}{X}{Y}. Let $S\subset X$, if \func{g}{M}{Y} is such that $g(x)=f(x),\,\,\forall x\in M$ then we say $f$ restricted to $M$ is $g$, denoted by $g=f|_M$
 \end{definition}
-\begin{theorem}[Hahn-Banach Theorem, sublinear]\rm\nextline 
-	
+\begin{theorem}[Hahn-Banach Theorem, sublinear]\rm\nextline
+	Let $M\in X$ be a linear subspace of $X$, where $X$ is a linear space. \func{p}{X}{\real} is sublinear, and \func{f}{M}{\real} is a linear map such that $f(x)\leq p(x),\,\,\forall x\in M$.\\
+	Then, there exists a linear map \func{F}{X}{\real} with $F|_M=f$ and $F(x)\leq p(x),\,\,\forall x\in M$.
+	\begin{pf}{Hahn-Banach Theorem, sublinear}{}
+		\placeholder
+	\end{pf}
 \end{theorem}
+
+\subsection{Results of Hahn-Banach}
+\begin{theorem}[Dual functional]\label{Dual functional}\rm\nextline
+	Let $X$ be a normed linear space. $\forall x\in X,\,\exists x^*\in \dual{X}$ s.t. $\inne{\dual{x}}{x}\equiv\dual{x}(x)=\norm{x}^2_X=\norm{\dual{x}}^2_{\dual{X}}$\\
+	Note that here $\inne{\cdot}{\cdot}$ does not necessarily stand for inner product.
+	\begin{pf}{Dual functional}{}
+		Let $M=span(x)$. Define $f(tx)=t\norm{x}^2_X,\,\,\forall t\in \real$. Clearly $f$ is linear, and that $\norm{f}_{\dual{M}}=\norm{x}_X$. \\
+		Then we apply Hahn-Banach theorem to extend $f$ to $\dual{x}=F\in \dual{X}$, with $\norm{\dual{x}}_{\dual{X}}=\norm{f}_M=\norm{x}_X$
+	\end{pf}
+\end{theorem}
+When the space is a Hilbert space, this theorem becomes Riesz representation theorem. (without changing notation! That's why bracket is a good notation here) In short, this theorem says that you can always find a linear functional such that for its value for a chosen element is precisely the norm of this element.
+
+\begin{proposition}[Point-point separation]\label{separations}\rm\nextline
+	Let $x$ and $y$ be points in $X$ \placeholder \\
+	(Question here is do  we need X to be normed? or even Banach?)
+	There exists $l\in\dual{X}$ such that $l(x)\neq l(y)$.
+	\begin{pf}{}{}
+		Choose $l\in \dual{X}$ to be the dual functional of $(y-x)\in X$. \\Then $l(y-x)=\norm{y-x}^2_X>0\implies l(y)\neq l(x)$.
+	\end{pf}
+\end{proposition}
+
+\begin{proposition}[separation from proper closed subspaces]\rm\nextline
+$M\subset X$ is a linear space, closed and (naturally) convex, Assume $x_0\not\in M$ such that $d\equiv dist(x_0,M)$, then $\exists \ell\in\dual{X}$ with $\ell|_M=0$ and $\norm{\ell}_\dual{X}=1$ and $\ell(x_0)=d$.
+\begin{pf}{}{}
+	Let $M_0=\{xt+x_0:x\in M\}$. Define \func{f}{M_0}{\real} which is linear, $f(x+tx_0)=td$. Then\\
+	\placeholder
+\end{pf}
+\end{proposition}

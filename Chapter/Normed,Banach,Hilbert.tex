@@ -451,7 +451,7 @@ Intuitively, this means that given any two points in the a convex set, the "segm
 	$$
 		\norm{s_0-x}= \text{dist}(S,x)
 	$$
-	\textit{proof:}\\
+	\begin{pf}{}{}
 	The result is trivial when $x\in S$, we can choose $s_0=x$ and dist$(S,x)=0$.\\
 	When $x\notin S$, the idea of the proof is, by definition of distance especially the "infimum" we have a sequence of points in $S$ whose distance with $x$ converges to dist$(S,x)=0$. Then from the convergence of distance we can show that this sequence is Cauchy, hence by completeness, convergent. Finally by cussedness we conclude that it converges to a point in S and convexity can be used to show uniqueness. \\
 	So we choose $x\notin S$ and a sequence $\left\{y_n\right\}_1^\infty$ in $S$ such that $\norm{y_n-x}\xrightarrow{}0$. And let $d=\text{dist}(S,x)$.
@@ -482,6 +482,7 @@ Intuitively, this means that given any two points in the a convex set, the "segm
 		\norm{y_1-y_2}^2=\norm{(y_1-x)-(y_2-x)}^2\leq0
 	$$
 	Hence $y_1=y_2$, giving the uniqueness.
+\end{pf}
 \end{proposition}
 
 

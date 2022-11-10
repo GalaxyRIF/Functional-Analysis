@@ -51,9 +51,9 @@ In this section we shall see a very nice result about linear functional, which l
 	$$
 		\norm{\Lambda(x)}\leq\norm{\Lambda}\norm{x}
 	$$
-	\textit{proof}:\\
+	\begin{pf}{}{}
 	Let $e\in X$ be such that $\norm{e}=1$.
-	Then
+	Then:
 	\begin{equation}
 		\begin{split}
 			\norm{\Lambda}\norm{e}&=\sup_{x\in X}{\left\{\norm{\Lambda(x)},\norm{x}\leq1\right\}}\norm{e}\\
@@ -62,6 +62,7 @@ In this section we shall see a very nice result about linear functional, which l
 		\end{split}
 	\end{equation}
 	Then for arbitrary non-zero vector $x\in\dual X$ we write $x=\norm{x}\frac{x}{\norm{x}}$ and exploit linearity to finish the proof.
+\end{pf}
 \end{proposition}
 Definition for continuous linear functional is similar to the that of continuous function in real-analysis, changing absolute value to corresponding norms. It is a routine exercise to check that this indeed defines a norm.
 
@@ -77,8 +78,8 @@ Definition for continuous linear functional is similar to the that of continuous
 \end{proposition}
 
 \begin{proposition}[Continuity $\Longleftrightarrow$ Boundedness]\rm\nextline
-	Let $\Lambda:X\xrightarrow{}\mathbb{C}$ be a linear functional. Then $\lambda$ is continuous if and only if it is bounded.\\
-	\textit{proof:}\\
+	Let $\Lambda:X\xrightarrow{}\mathbb{C}$ be a linear functional. Then $\lambda$ is continuous if and only if it is bounded.
+	\begin{pf}{Part I: Continuity implies Boundedness}{}
 	$(\Longrightarrow)$We first show that continuity implies boundedness. We know $\Lambda$ is continuous at 0, so fix $\varepsilon>0$, we may find $\delta_0>0$ such that $\norm{x}<\delta_0\Longrightarrow \norm{\Lambda(x)}<\varepsilon$. So for any $y\in X$ we have that:
 	\begin{equation}
 		\begin{split}
@@ -87,7 +88,9 @@ Definition for continuous linear functional is similar to the that of continuous
 			&\leq\frac{2\norm{y}}{\delta_0}\varepsilon=\frac{2\varepsilon}{\delta_0}\norm{y}
 		\end{split}
 	\end{equation}
-	Hence $M=2\varepsilon/\delta_0$ gives a bound of the functional.\\
+	Hence $M=2\varepsilon/\delta_0$ gives a bound of the functional.
+\end{pf}
+\begin{pf}{Part II:Boundedness implies Continuity}{}
 	$(\Longleftarrow)$Now we show that boundedness implies continuity. By last proposition we may reduce this to showing that boundedness implies continuity at 0. Let $K$ be such that
 	$$
 		\Lambda(x) \leq K\norm{x},\quad\forall x\in X
@@ -102,6 +105,7 @@ Definition for continuous linear functional is similar to the that of continuous
 		\end{split}
 	\end{equation}
 	Hence $\Lambda$ is continuous at 0, which finishes the proof.
+\end{pf}
 \end{proposition}
 
 \begin{proposition}[Sequential continuity]\rm
@@ -186,7 +190,8 @@ One may notice, that linear maps also form a vector space: multiple of a linear 
 \end{definition}
 \begin{proposition}[Dual space of Banach Space]\label{dual space Banach}\rm\nextline
 	Dual space of a Banach space is also Banach, under functional norm.\\
-	\textit{proof:}\\
+	\begin{pf}{}{}
+
 	Here we assume scalar field to be $\mathbb{C}$.\\
 	First,to check that $\dual{X}$ is a vector space, it suffices to show that multiple and sum of bounded linear functional remains to be linear and bounded. This part of proof is trivial.\\
 	Second, we shall check that $\dual X$ is complete under functional norm.
@@ -234,6 +239,7 @@ One may notice, that linear maps also form a vector space: multiple of a linear 
 		\end{split}
 	\end{equation}
 	Hence T is also bounded, so $T\in \dual X$, which finishes the proof for completeness.
+\end{pf}
 \end{proposition}
 
 
@@ -246,7 +252,7 @@ We have shown that dual space of a Banach space is Banach, what about dual space
 	$$
 		T(h)=\inne{h}{h_0},\quad\forall h\in\hbp\quad\text{ and  }\norm{T}=\norm{h}
 	$$
-	\textit{proof}:\\
+	\begin{pf}{}{}
 	If $T=0$ we simply choose $h_0=0$.\\
 	When $T\neq0$,let $S=Ker(T)$, pick a non-zero vector $w\in S^\perp$, without loss of generality, we may assume $T(w)=1$. Then, for any $x\in \hbp$, we observe for vector $(T(x)w-x)$ that
 	$$
@@ -274,6 +280,7 @@ We have shown that dual space of a Banach space is Banach, what about dual space
 		\end{split}
 	\end{equation}
 	The result shows that \hbs=$\dual\hbp$ in the sense that the ma from $h$ to corresponding linear functional is an isometry: $\norm{h}=\norm{T}$
+\end{pf}
 \end{theorem}
 \begin{remark}[Alternative proof of Riesz Representation theorem]\rm\nextline
 	The proof above is purely algebraic, in the sense that no analysis is used. However, one may realise that the proof relies heavily on the construction of $T(x)w-x$, which may not be that easy to thought of. Hence another completely different proof is presented here. 
@@ -396,7 +403,7 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 	\norm{y_nx-y_nx^{(n)}}\leq
 	\norm{x-x^{(n)}}\cdot\norm{y_n}
 	<\varepsilon/2
-	$$.
+	$$
 	Then, by continuity (boundedness) of $l$, we can choose another index $t\in\natu$ such that 
 	$$
 	\norm{l(x)-l(x^{(n)})}<\varepsilon/2
@@ -413,7 +420,7 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 \end{pf}
 \end{theorem}
 
-
+\newpage
 \subsubsection{Dual operator}\label{dual operator}
 \begin{definition}[dual operator]\rm\nextline
 	Let $X$, $Y$ be Banach spaces, with norm $\norm{\cdot}_X$ and $\norm{\cdot}_Y$. Let A be an operator from $X$ to $Y$ : \func{A}{X}{Y}. \\
