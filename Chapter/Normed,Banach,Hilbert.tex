@@ -145,22 +145,19 @@ There are many norms. Some acts similarly, some acts differently. One may have s
 		Now since $x$ is arbitrary, the proof is completed.	
 	\end{pf}
 	\begin{pf}{STEP III}{}
-		Now we shall proof continuity of any norm under $\norm\cdot _1$. This can be done by showing for a sequence $(x_n)$ converging to $x$ under the metric induced by $\norm{\cdot}_1$, the norm if its terms under $\norm{\cdot}_a$ converges to $\norm{x}_a$\\. So let $(x_n)$ be a sequence in $X$ with $x_n\xrightarrow[]{n\to \infty}x$. We have
+		Now we shall proof continuity of any norm under $\norm\cdot _1$. This can be done by showing for a sequence $(x_n)$ converging to $x$ under the metric induced by $\norm{\cdot}_1$, the norm if its terms under $\norm{\cdot}_a$ converges to $\norm{x}_a$. So let $(x_n)$ be a sequence in $X$ with $x_n\xrightarrow[]{n\to \infty}x$. We have
 		\begin{equation}
 			\begin{split}\nonumber
-				|\norm{x_n}_a-\norm{x}_a|&\leq\norm{x_n-x}_a\\
-				&\leq M\norm{x_n-x}_1\to0\quad \text{when}\,\,n\to\infty
+				|\norm{x_n}_a-\norm{x}_a|&\leq\norm{x_n-x}_a\leq M\norm{x_n-x}_1\to0\quad \text{when}\,\,n\to\infty
 			\end{split}
 		\end{equation}
 		Thus
 		$$
 			\lim_{n\to\infty}|\norm{x_n}_a-\norm{x}_a|=0
 		$$
-		Which completes the proof.
 	\end{pf}
 \begin{pf}{STEP IV}{}
-	Now we shall apply extreme value theorem to obtain our final result here. Using the theorem requires unit sphere to be a compact set. Proof of this fact is given later, one should realise that the proof does not depend on equivalence of norms, as we only require compactness in $X,\norm{\cdot}_1$. However, it is true that unit sphere is compact under any norm in finite dimensional cases.\\
-	So we have that $U_1=\{s\in X:\norm{s}_1=1\}$ is compact with  a  function $\norm{\cdot}_a$ continuous on it, so by extreme value theorem it attains maximum $M_U=max\{\norm{x}_a:x\in U_1\}$ and minimum $m_u=min\{\norm{x}_a:x\in U_1\}$ on $U_1$, thus for any $x\in U_1$ we have
+	Now we shall apply extreme value theorem to obtain our final result here. Using the theorem requires unit sphere to be a compact set. Proof of this fact is given later, one should realise that the proof does not depend on equivalence of norms, as we only require compactness in $X,\norm{\cdot}_1$. However, it is true that unit sphere is compact under any norm in finite dimensional cases. So we have that $U_1=\{s\in X:\norm{s}_1=1\}$ is compact with  a  function $\norm{\cdot}_a$ continuous on it, so by extreme value theorem it attains maximum $M_U=max\{\norm{x}_a:x\in U_1\}$ and minimum $m_u=min\{\norm{x}_a:x\in U_1\}$ on $U_1$, thus for any $x\in U_1$ we have
 	$$
 		m_u \norm{x}_1=m_u\leq\norm{x}_a\leq M_u=M_u \norm{x}_1
 	$$
@@ -239,7 +236,7 @@ Proof of this two proposition is simple use of the results of finite dimensional
 
 \newpage
 \subsection{Fixed point}
-Contraction mapping theorem, sometimes called Banach fixed point theorem,it guarantees the existence and uniqueness of fixed points of certain self-maps of metric spaces, and provides a constructive method to find those fixed points.
+Contraction mapping theorem, sometimes called Banach fixed point theorem, guarantees the existence and uniqueness of fixed points of certain self-maps of metric spaces, and provides a constructive method to find those fixed points.
 
 \begin{theorem}[Fixed point]\rm \nextline
 	Let $X$ be Banach space, $f:X\xrightarrow{}X$ is a contraction mapping, i.e. a mapping satisfying
