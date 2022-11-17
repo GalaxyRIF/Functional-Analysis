@@ -1,0 +1,32 @@
+\newpage
+\section{Baire Category and UBP}
+We seek a topological characterization of the "zise" of the sets. First recall some relevant topological terms.
+\begin{definition}[Clousure and interior]\rm\nextline
+    Let $(X,d)$ be a metric space, $A\subset X$.
+    The interior of $A$, written as $int(A)$ or sometimes $A^o$:
+    $$ int(A)=\bigcup_{G\subset A,\,open}G$$
+    The closure of A, written as $\bar{A}$ or $cl(A)$:
+    $$ \bar{A}=\bigcap_{U\supset A\,closed}U$$
+
+\end{definition}
+The key is the following:
+\begin{lemma}\rm\nextline
+    $(X,d)$ complete, $X\neq\emptyset$. If $X=\bigcup_{k=1}^\infty A_k$ with $A_k$ closed (i.e. $\bar{A_k}=A_k$), then $\exists k$ such that $int(A_k)\neq\emptyset$.
+    \begin{pf}{}{}
+        Assume not, i.e. $\forall k,\,int(A_k)=\emptyset$ (*). Pick $x_1\in X\backslash A_1$. (ok, because $X$ open and thus $X\backslash A_1\neq\emptyset$).\\
+        Since $X\backslash A_1=X\cap A_1^c$ is open and can find $0<r_1<2^{-1}$ such that $B(x_1,r_1)\subset X\backslash A_1$.\\
+        Repeat: find $x_2\in B(x_1,r_1/2)\backslash A_2\neq\emptyset$ and $r_2<2^{-2}$ : $B(x_2,r_2)\subset X\backslash A_2$\\
+        Claim: $\forall k\geq 1$, $\exists x_k\in X$ and $0<r_k<2^{-k}$ such that $B(x_{k+1},r_{k+1})\subset B(x_k,r_k/2)\subset B(x_k,r_k)\subset X\backslash A_k$.\\
+        proof: $k=1$: above $k-1\rightarrow k$: induction using (*) .$\square$\\
+        The sequence $(x_k)$ is Cauchy. By (1) $\forall m\geq k\geq1$, $d(x_m,x_k)\stackrel{x_m\in B(x_k,r_k/2)}{\leq}r_k/2<2^{-(k+1)}$\\
+        By completeness, $\exists x_*\in X$: $d(x_n,x_*)\to0$ as $n\to \infty$.\\
+        Claim: $x_*\in B(x_k,r_k),\,\,\forall k\geq 1$\\
+        If true then $x_*\in X\backslash A_k\,\forall k$ i,e, 
+        $$x_*\in\bigcap_{k\geq1}(x\backslash A_k)=X\backslash\bigcup_{k\geq1}A_k=\emptyset$$
+        which is a contradiction. To get claim, note that for all $b\geq0$:
+        $$
+        d(x_*,x_k)\leq \underbrace{{d(x_*,x_{k+1})}}_{\to0\,\,n\to\infty}+\underbrace{d(x_{k+1},x_k)}_{\leq r_k/2}
+        $$
+        so by choosing n large enough, the sum is less than $r_k$
+    \end{pf}
+\end{lemma}
