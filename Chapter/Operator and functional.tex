@@ -208,19 +208,19 @@ One may notice, that linear maps also form a vector space: multiple of a linear 
 		\end{split}
 	\end{equation}
 	This implies that $\{T_n(x)\}$ is a Cauchy sequence on $\mathbb{C}$. By completeness of $\mathbb{C}$, it converges to a point on $\mathbb{C}$. Note that this works for arbitrary $x\in X$, we can define $T$ to be the pointwise limit in following form:
-	$$
+	$
 		T(x)\equiv\lim_{n\to\infty}{T_n(x)},\quad\forall x\in X
-	$$
+	$
 	We can verify that $T$ is linear:
 	\begin{equation}
 		\begin{split}
-			T(ax)&=\lim_{n\to\infty}{T_n(ax)}\\
-			&=\lim_{n\to\infty}{aT_n(x)}\\
-			&=a\lim_{n\to\infty}{T_n(x)}\\
-			&=aT(x)
+			T(ax)&=\lim_{n\to\infty}{T_n(ax)}
+			=\lim_{n\to\infty}{aT_n(x)}
+			=a\lim_{n\to\infty}{T_n(x)}
+			=aT(x)
 		\end{split}
 	\end{equation}
-
+and
 	\begin{equation}
 		\begin{split}
 			T(x)+T(y)&=\lim_{n\to\infty}{T_n(x)}+\lim_{n\to\infty}{T_n(y)} \\
@@ -233,9 +233,9 @@ One may notice, that linear maps also form a vector space: multiple of a linear 
 	It remains to show that $T$ is bounded. Fix $r>0$, we can find $a\in\mathbb{N}$ such that $\norm{T-T_a}<r$,
 	\begin{equation}
 		\begin{split}
-			\norm{T}&=\norm{T-T_a+T_a}\\
-			&\leq\norm{T-T_a}+\norm{T_a}\\
-			&=r+\norm{T_a}
+			\norm{T}&=\norm{T-T_a+T_a}
+			\leq\norm{T-T_a}+\norm{T_a}
+			=r+\norm{T_a}
 		\end{split}
 	\end{equation}
 	Hence T is also bounded, so $T\in \dual X$, which finishes the proof for completeness.
@@ -381,7 +381,7 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 			&=\norm{y}_q
 		\end{split}
 	\end{equation}
-	Which shows isometry. \\
+	Which shows isometry. 
 \end{pf}
 \begin{pf}{STEP II}{}
 	Now let us assume $l\in(\ell^p)^*$. We define natural basis of an $\ell^q$ space: $e_n=\sequ{(e_n)_k}$ , where $(e_n)_k=1$ if $k=n$, otherwise $(e_n)_k=0$. Each $e_n$ is a sequence with all entries zero, except at $k-th$ entry the value is 1. Now consider a sequence of $y_n=\sum_{k=1}^nl(e_k)\cdot e_k$,i.e. $y_n$ is a sequence where $(y_n)_k=l(e_k)$ for $k\leq n$. By denoting $x^n$ to be the sequence with first n-terms equals to corresponding term of x and any term afterwards set to zero, we claim the following three things:
@@ -420,6 +420,9 @@ In this section, we consider sequence spaces, $l_p$ space. Specially, when $p=2$
 \end{pf}
 \end{theorem}
 
+\begin{theorem}[results on l0 and l inf]
+\placeholder                                                                                                          
+\end{theorem}
 \newpage
 \subsubsection{Dual operator}\label{dual operator}
 \begin{definition}[dual operator]\rm\nextline

@@ -14,14 +14,43 @@
 \placeholder
 \subsection{Closed Graph Theorem}
 
-\begin{definition}[Graph]\nl
-	\placeholder
+\begin{definition}[Graph,closed graph and closed operator]\nl
+	Let $X$, $Y$ be normed spaces. Linear operator $T$ defined on $D(T)\subset X$, linear subspace of $X$. Graph of $T$ is $\Gamma (T)=\{(x,Tx):x\in D(T)\}$. If $\Gamma (T)$ is closed in $(X\times Y,\norm{\cdot}_{X\times Y}$, where $\norm{\cdot}_{X\times Y}$ can be set to $max(\norm{\cdot}_{X},\norm{\cdot}_{Y)}$ or $\norm{\cdot}_{X}+\norm{\cdot}_{Y}$, we say $\Gamma T$ is closed, and $T$ is called closed operator.
 \end{definition}
+
 
 \begin{theorem}[Closed Graph Theorem]\label{CGT}\nl
-	\placeholder
+	Let $X$, $Y$ be Banach. $T$ an linear operator \func {T}{X}{Y}. The following two statements are equivalent:
+	\begin{itemize}
+	    \item $T$ is closed.
+	    \item $T$ is continuous.
+	\end{itemize}
+	\begin{pf}{$bounded\implies closed$}{}
+	    We should check that limit of a convergent sequence sequence in $\Gamma(T)$ is inside $\Gamma(T)$.
+	    By \hyperref{Completeness of product of Banach spaces}{Completeness of product of Banach spaces}, $X\times Y$ is complete.
+	    Since $T$ is continuous, consider $\sequ{a_n}\subset X\times Y$ where $a_n=(x_n,Tx_n)$ with $x_n\to x\in X$. By continuity of $T$ and completeness of $Y$ we have that $Ax_n\to y=Ax\in \T(X)\subset Y$. Then we have that
+	    $$\norm{(x,Tx)-(x_n,Tx_n)}_{X \times Y}=\underbrace{\norm{x-x_n}_{X}}_{\to 0}+\underbrace{\norm{y-Tx_n}}_{\to 0}\to0\quad \text{as  }n\to0$$
+	    This means that $a_n\to(x,Tx)\in \Gamma(T)$. Thus the graph is closed, hence $T$ is closed.
+	\end{pf}
+	\begin{pf}{$closed\implies bounded$}{}
+	Idea of this part of the proof is recover $T$ by the partly inverting the map from $(X,Y)$ to $\Gamma(T)$.
+	Consider two linear maps:
+	$$
+	\Pi_A():\Gamma(T)\to X,\,\Pi_A((x,Tx))=x\qquad \Pi_B():\Gamma(T)\to Y,\,\Pi_A((x,Tx))=Ax
+	$$
+	We can use sequential continuity to check that both maps are continuous. Moreover, $\Pi_A$ is  surjective and injective from its definition, thus bijective. By open mapping theorem, we have that $\exists {\Pi_A}^{-1}\in\mathcal{L}(X,\Gamma(T))$, which means that ${\Pi_A}^{-1}$ is continuous. Thus we have
+	$$
+	T=\underbrace{{\Pi_A}^{-1}}_{conti.}\circ\underbrace{{\Pi_B}}_{conti.}
+	$$
+	Is also countinuous.
+	\end{pf}
 \end{theorem}
 
-\begin{definition}[Closed Operator]\label{Closed Operator}\nl
-	\placeholder
-\end{definition}
+\begin{example}[Space not Banach]
+\placeholder
+\end{example}
+
+
+\begin{example}[Inverse exists, not continuous]
+\placeholder
+\end{example}

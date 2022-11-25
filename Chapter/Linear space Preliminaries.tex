@@ -143,21 +143,21 @@ In this section we have both example and counter example.
 
 \subsubsection{Separability}
 
-\begin{definition}[dense]\rm
+\begin{definition}[dense]\nl
 	A set in $S$ metric space $(V,d)$ is dense if there it intersects with any open subset of $V$. Equivalently this is $\forall x\in V,\forall \varepsilon>0$, $D\cap B_{x,\varepsilon}\neq \emptyset$.
 \end{definition}
 
 
-\begin{definition}[separable]\rm
+\begin{definition}[separable]\nl
 	A metric space $(V,d)$ is separable if it contains a countable dense subset.
 \end{definition}
-
+\begin{comment}
 \begin{example}[separable space example]\label{separable space example}
 \end{example}
-
+\end{comment}
 \subsubsection{Schauder Basis and Hamel basis}
 
-\begin{definition}[Schauder basis]\label{Schauder basis}\rm
+\begin{definition}[Schauder basis]\label{Schauder basis}\nl
 	A Schauder basis of Normed vector space $(v,\norm{\cdot})$ is a set $B\subset V$ that is linearly independent, and that $\forall x\in V$, we have a sequence $\{a_n\}$ with $\lim_{n\to\infty}\sum_{k=1}^n a_k b_k\to x$. In plain language, this means that every element of the set can be expressed as a infinite linear combination of the basis.
 \end{definition}
 
@@ -167,11 +167,14 @@ In this section we have both example and counter example.
 \end{proposition}
 
 \begin{definition}[Hamel basis]\rm\nextline
-	\placeholder
+	A set $H\subset X$ is a Hamel basis for linear space $X$, if and only if $H$ is linearly independent and $\forall x\in X$, $\exists !a_i\in \real$ for all $1\leq i\leq n$ for some n and 
+	$$
+	x=\sum_{i=1}^n a_ih_i,\,\,h_i\in H
+	$$
 \end{definition}
 
 \begin{remark}[Hamel basis and Schauder basis]\rm\nextline
-	\placeholder
+	Having Hamel basis means that one can express any element by a necessarily finite linear combination of the basis. For Schauder basis, it could be infinite linear combintation.
 \end{remark}
 
 \subsubsection{Compactness}
