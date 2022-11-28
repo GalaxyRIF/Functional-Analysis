@@ -1,6 +1,6 @@
 \newpage
-\section{Open mapping theorem}
-
+\section{OMT and CGT}
+\subsection{Open mapping theorem}
 \begin{comment}
 \begin{definition}[Open map]\label{open map}\nl
 	An open map is one for which the image of every open set is open.
@@ -199,11 +199,72 @@ Proof of claim:
 	\end{pf}
 \end{theorem}
 
-\begin{example}[Space not Banach]\nl
-	\placeholder
+\begin{remark}[On CGT]
+	ii) is simpler than i), but equivalent.\\
+	i) says A is continuous, i.e. if $(x_n)\subset X$, $x\in X$
+	$$\norm{x_n-x}_X\rightarrow{n\to\infty}0\implies\norm{Ax_n-Ax}_Y\rightarrow{n\to\infty}0$$
+	This contains two things to check: $(Ax_n)$ converges and limit is $Ax$.\\
+	ii) says $A$ is closed, i.e.
+	\begin{equation}
+		\left\{
+		\begin{aligned}
+			&\norm{x_n-x}_X\rightarrow{n\to\infty}0\\
+			&\norm{Ax_n-y}_Y\rightarrow{n\to\infty}0\\
+		\end{aligned}
+		\right.\implies
+		Ax=y
+	\end{equation}
+	Which is only one condition to check.
+\end{remark}
+
+
+\begin{example}{Running Example}\nl
+	$Y=X=C=C^0[0,1]$ with $\norm{\cdot}_X=\norm{\cdot}_\infty$ and $A=\frac{d}{dt}$, with $D(A)\stackrel{eg}{=}C^1[0,1]\subset X$ or subspaces thereof. Prime example of  (\underline{unbounded}) operator with dense domain $D(A)$: indeed $C^1[0,1]=C$ using e.g. Weierstrass Approximation Theorem (Polynomials are already $\norm{\cdot}_\infty$-dense in C)
+	\end{example}
+\begin{example}{Running Example}\nl
+$Y=X=C=C^0[0,1]$ with $\norm{\cdot}_X=\norm{\cdot}_\infty$ and $A=\frac{d}{dt}$, with $D(A)\stackrel{eg}{=}C^1[0,1]\subset X$ or subspaces thereof. Prime example of  (\underline{unbounded}) operator with dense domain $D(A)$: indeed $C^1[0,1]=C$ using e.g. Weierstrass Approximation Theorem (Polynomials are already $\norm{\cdot}_\infty$-dense in C)
+\end{example}
+
+\begin{example}
+	Let $A\in\mathcal{L}(X,Y)$ with $D(A)=X$. Then $A$ is closed.
+	\begin{pf}{}{}
+		Let $(x_k,y_k)_k\subset \Gamma_A$  with $\norm{(x_k,y_k)-(x,y)}_{X\times Y}\xrightarrow{k\to\infty}0$ for some $(x,y)\in X\times Y$\\
+		NTS: $(x,y)\in \Gamma_A$ i.e. $y=Ax$. 
+		Know $ y_k=Ax_k$ and $\norm{x_k-x}_X\xrightarrow{k\to\infty}0$, $\norm{Ax-y}_Y\xrightarrow{k\to\infty}0$
+		But $\forall k\geq 1$
+		$$\norm{y-Ax}_Y\leq\norm{y-Ax}_Y+\norm{Ax_k-ax}_Y
+		\leq \norm{y-Ax}_Y\norm{A}\norm{x_k-x}_X$$
+		Thus 
+		$$\lim_{k\to\infty}\norm{y-Ax}_Y\leq\lim_{k\to\infty}\norm{y-Ax}_Y\norm{A}\norm{x_k-x}_X=0$$
+	\end{pf}
+	\end{example}
+	
+\begin{example}[running example continues]
+	$(D(A),\norm{\cdot}_\infty)$ with $D(A)=C^1[0,1]$ is NOT Banach, and $A:D(A)\to C$ is an example of an operator which is:\\
+	claim: \\
+	i) closed, but\\
+	ii) not continuous\\
+	For ii), take $f_n(t)=t^n\in D(A)$, $Af_n=nf_{n-1}$ so $\norm{f_n}_\infty=1$, $\norm{Af_n}\infty=n\norm{f_{n-1}}\infty=n$. So 
+	$$ \sup_{f\in D(A),\norm{f}\infty\leq1}\norm{Af}_\infty=\infty$$
+	For i), if $(f_n,f_n')\to(f,g)$ in $(D(A)\times C)$ then $\norm{f-f_n}_\infty\to 0$, $\norm{f_n'-g}_\infty\to0$ but
+	$$
+	\forall t\in(0,1],\,\underbrace{f_n(t)}_{\rightarrow{n\to\infty}f(t)}
+	=\underbrace{\int_0^t f'_n(x) dx}_{\rightarrow{DCT}\int_0^t g(x) dx}
+	+f_n(0)
+	$$
+	so $f'=g$ by fundamental theorem of calculus(FTC), i.e. $(f,g)=(f,f')\in\Gamma_A$.
 \end{example}
 
 
-\begin{example}[Inverse exists, not continuous]\nl
-	\placeholder
+\begin{corollary}[Continuous Inverse]\nl
+	$X$, $Y$ Banach, $A:(DA)\subset X\to Y$ linear, closed and bijective. Then $\exists B=A^{-1}\in\mathcal{L}(Y,X)$ with $AB=id_Y$ and $BA=id_{D(A)}$.
+	Proof is left as an exercise. Hint: similar to CGT, consider $\Pi_Y:\Gamma_A\to Y$, $B\stackrel{def.}{=}\Pi_X\circ \Pi_Y^{-1}$
+	
+\end{corollary}
+
+\begin{example}[???]\nl
+	A is surjective: for $g\in C$ define $f(t)=\int_0^t g(s) ds$. Then by FTC, $Af=g$.\\
+	A is not injective: $Af=A\tilde{f}\implies f=\tilde{f}+c,c\in\real$. 
+	Let $D(A)\defeq C_0^1[0,1]=\{f\in C^1[0,1]:f(0)=0\}$
+	Then $A:D(A)\to C$ is bijective and has continuous inverse $B=A^{-1}$ by corollary. In fact, $Bf(t)=\int_0^tf(s)ds$ with $Bf\in D(A)$.
 \end{example}
