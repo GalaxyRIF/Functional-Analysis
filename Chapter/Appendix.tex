@@ -1,12 +1,28 @@
 \newpage
 \section{Appendix}
 
-\subsection{Young's Inequality}\label{Young's Inequality}
-\placeholder
-
+\subsection{Young's Inequality}\label{Young's Inequality}\nextline
+For non-negative real numbers $a\geq0$ and $b\geq0$ with positive real numbers $p>1$ and $q>1$ satisfying
+$$
+\frac{1}{p}+\frac{1}{q}=1
+$$
+Then 
+$$
+ab\leq \frac{a^p}{p}+\frac{b^q}{q},\quad \text{equality holds when }a^p=b^q
+$$
+More details at \href{https://en.wikipedia.org/wiki/Young's_inequality_for_products}{\color{blue} Wikipedia}.
 \subsection{Minkowski's inequality}\label{Minkowski-holder}
-\placeholder
-
+Minkowski's inequality gives the triangular inequality in $\ell^p$ and $L^p$ spaces:
+$$
+\norm{x}_p+\norm{y}_p\geq\norm{x+y}_p
+$$
+which can be written equivalently, for $\ell^p$ with $p\in(1,\infty)$:
+$$
+\left(\sum_{n=1}^{\infty}\left|x_n\right|^p\right)^\frac{1}{p}+
+\left(\sum_{n=1}^{\infty}\left|y_n\right|^p\right)^\frac{1}{p}\geq
+\left(\sum_{n=1}^{\infty}\left|x_n+y_n\right|^p\right)^\frac{1}{p}
+$$
+More details at \href{https://en.wikipedia.org/wiki/Minkowski_inequality}{\color{blue} Wikipedia}.
 
 \subsection{Hölder's Inequality}\label{Hölder's inequality}
 \begin{theorem}[Hölder's inequality,]\rm\nextline
@@ -36,13 +52,12 @@ $$
 \frac{1}{p}+\frac{1}{q}=1\implies \norm{x}_p\norm{y}_q\geq\norm{xy}_1
 $$
 \end{remark}
-\begin{remark}
+\begin{remark}\nl
 When supremum occurs, which is  one of $p$ and $q$ becomes infinity and another becomes 1, the inequality still holds. One should pay attention that for $L^p$ spaces the supremum norm is actually essential supremum.
 \end{remark}
 
 \begin{remark}[Proof of Hölder's inequality]\rm\nextline
-The proof uses young's inequality.\\
-\placeholder
+The proof uses young's inequality. See \href{https://en.wikipedia.org/wiki/Hölder's_inequality#Proof_of_Hölder's_inequality}{\color{blue}this link} for detailed proof.
 \end{remark}
 
 \subsection{Jensen's Inequality (convex function)}\label{Jensen's inquality}
@@ -81,7 +96,7 @@ $$
 \end{remark}
 
 \begin{remark}[$f''>0$]\rm\nextline
-	For single variable twice differentiable function, second derivative being non=negative implies convexity.
+	For a single variable twice differentiable function, the second derivative being non-negative implies convexity.
 \end{remark}
 
 
