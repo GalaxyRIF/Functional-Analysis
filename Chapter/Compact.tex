@@ -1,0 +1,21 @@
+\newpage
+\section{Compact Operators}
+In this section we'll define and investigate compact operators, the class of operators which are closest to the concept of finite rank operators.
+\begin{definition}[Compact Operators]\nl
+    $X$, $Y$ normed, \func{T}{X}{Y} linear. Then $T$ is a compact operator if $\forall B\subset X$ bounded, $T(B)$ is sequentially Compact.
+    
+\end{definition}
+
+\begin{remark}\nl
+    {\color{blue} Compact Operators maps bounded set to (sequentially) compact set.}
+\end{remark}
+
+\begin{lemma}[Equivalent definitions]\nl
+    For $X$, $Y$ Banach, the following are equivalent:
+    \begin{itemize}
+        \item $T$ is compact operator.
+        \item $\forall B$ bounded, $T(B)$ is compact.
+        \item $T(B_1)$, image of unit ball under $T$ is compact
+        \item $\forall\sequ{x_n}\subset X$ bounded, $T(x_n)$ has a Cauchy subsequence.
+    \end{itemize}
+\end{lemma}
