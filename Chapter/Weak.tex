@@ -1,0 +1,69 @@
+\newpage
+\section{Weak Topology}
+\subsection{Weak Convergence and weak* convergence}
+One annoying thing about our definition of convergence in norms has a problem, which is that it sometimes give different results in infinite dimensional spaces, for example, unit ball in infinite dimensional spaces are not compact. One way to "restore" the good properties is weak topology.
+\begin{definition}[Weak convergence]\nl
+Let $X$ be normed. A sequence $(x_n)\subset X$ converges weakly to $x\in X$ if $l(x_n) \to l(x)$ $\forall l\in \dual{X}$ writes $x_n\rightarrow{w} x$.    
+\end{definition}
+
+\begin{proposition}[Convergence implies weak convergence]\nl
+    If $x_n\to x$ then $x_n\rightarrow{w}x$.
+    \begin{pf}{}{}
+    Let $(x_n)\subset X$ be such that $x_n\to x\in X$. Then for any $l\in\dual{X}$, we have
+    $$|l(x_n)-l(x)|=|l(x_n-x)|\leq\norm{l}_*\norm{x-x_n}$$
+    where $\norm{l}<\infty$ by boundedness of $l$ and $\norm{x-x_n}\to 0$ by assumption. Thus we conclude $|l(x_n)-l(x)|\to0$, and since this holds for arbitrary bounded linear functional, we have $x_n\rightarrow{w}x$.
+    \end{pf}
+\end{proposition}
+
+\begin{definition}[Weak* convergence]\nl
+Let $X$ be normed space $\dual{X}$ be its dual space. A sequence $(l_n)\subset \dual{X}$ is weak* convergent to $l\in \dual{X}$ if $l_n(x)]\to l(x)\,\,\forall x\in X$. (Point-wise convergence of linear functional)
+\end{definition}
+
+\begin{definition}[Bidual]\nl
+Bidual of $X$ is $\dual{\dual{X}}=\dual{(\dual{X})}$. 
+\end{definition}
+
+\begin{proposition}[Embedding $X$ with canonical map]\nl
+$X$ always embeds into $\dual{\dual{X}}$, in a sense that there exists a canonical map $\iota: X\to\dual{\dual X}$, $\iota(x)(l)\equiv l(x)$ for any $x\in X,\, l\in\dual{X}$, which is linear and is an isometry.
+\end{proposition}
+
+\begin{definition}[Reflexive]\nl
+A normed space $X$ is reflexive if the canonical map $\iota$ given above is surjective, equivalently this means $X$ is reflexive if $X\cong \dual{\dual{X}}$.   
+\end{definition}
+
+\begin{remark}[On $\dual{X}$]\hfill\rm
+    \begin{itemize}
+        \item Strong Convergence: $\norm{l_n-l}_*\rightarrow{n\to\infty}{0}$
+        \item Weak convergence: $|T(l_n)-T(l)|\rightarrow{n\to\infty}0,\,\forall T\in \dual{\dual{X]}}$
+        \item Weak * convergence: $\norm{l_n(x)-l(x)}_X\rightarrow{n\to\infty}0,\,\forall x\in X$
+        \item Strong $\implies$ Weak $\implies$ Weak *.
+        \item When $\dual{\dual{X}}\cong X$, weak* and weak convergence are equivalent.
+    \end{itemize}
+\end{remark}
+
+\begin{example}[Reflexive space]\nl
+Typical examples include all Hilbert spaces, since  $X\cong \dual{X}$ by corollary of Riesz Rep. Theorem. Also, for any $p\in(1,\infty)$, $L^p$ space is reflexive since, with its dual being $L^q$ satisfying $1/p+1/q=1$, and bidual congruent to $L^p$ itself. Unfortunately when $l=1$ or $l=\infty$ the space is not reflexive.
+\end{example}
+
+\subsection{Consequences of weak convergence}
+\begin{proposition}[Weak convergence $\implies$ bounded]\nl
+Let $(x_n)\subset X$ be such that $x_n\xrightarrow{w}x$. Then $(x_n)$ is bounded, i.e.
+$$\sup_{n\in\natu}\norm{x_n}<\infty$$
+\end{proposition}
+
+\begin{theorem}[Banach-Alaoglu Theorem]\nl
+    Let $X$ be separable. If $(l_n)\subset \dual{X}$ is bounded in $\dual{X}$, then $\exists l\in\dual{X}$ and a subsequence $\Lambda\subset\natu$ such that $l_n\xrightarrow{w^*}l$. In plain language, this means that any bounded sequence in dual of separable space has a weakly convergent subsequence.
+\end{theorem}
+
+\begin{remark}\nl
+    If $X$ is reflexive, then we don't need separability. A special case of this is when $X$ is Hilbert.
+\end{remark}
+
+\begin{corollary}[Banach-Alaoglu in Hilbert space]\nl
+    If $(x_n)\subset \hbp$ is bounded, there are two consequences, equivalent:
+    \begin{itemize}
+        \item $(x_n)$ has a weakly convergent subsequence.
+        \item Unit ball in \hbs, $B(0,1)$ is weakly compact.
+    \end{itemize}
+    If $(x_n)\subset \hbp$ is bounded, then  subsequence. 
+\end{corollary}

@@ -1,5 +1,5 @@
 \newpage
-\section{Open mapping theorem}
+\section{Open Mappiing and Closed Graph}
 \begin{comment}
 \bsegin{comment}
 \begin{definition}[Open map]\label{open map}\nl
@@ -214,7 +214,7 @@ Proof of claim:
 \end{comment}
 
 
-\section{Open mapping theorem}
+\subsection{Open mapping theorem}
 \begin{definition}[Open Ball]\nl
 An open ball in normed linear space $X$ with radius $r>0$ centered at $x\in X$ is
 $$
@@ -362,11 +362,11 @@ so $\norm{A}\leq1$. But $A^{-1}$ is unbounded.
 Pick $x^{(n)}=(\overbrace{1,1,1,1}^{n},0,......)$ then $\norm{x^{(n)}}_\infty=1$ but $\norm{A^{-1}x^{(n)}}=n$. Hence $A^{-1}\not\in\mathcal{L}(X)$ and $X$ cannot be complete, else by theorem i), $A^{-1}$ would be bounded.
 \end{example}
 
-\section{Closed Graph Theorem}
+\subsection{Closed Graph Theorem}
 Consider $X$, $Y$ normed spaces. Often an operator $A$ not defined on all of $A$ but on a "domain" $D(A)$. So we assume that 
 $D(A)\subset X$ is a linear subspace on which $A:D(A)(\subset X)\to Y$, linear is defined.
-\begin{example}{Running Example}\nl
-$Y=X=C=C^0[0,1]$ with $\norm{\cdot}_X=\norm{\cdot}_\infty$ and $A=\frac{d}{dt}$, with $D(A)\stackrel{eg}{=}C^1[0,1]\subset X$ or subspaces thereof. Prime example of  (\underline{unbounded}) operator with dense domain $D(A)$: indeed $C^1[0,1]=C$ using e.g. Weierstrass Approximation Theorem (Polynomials are already $\norm{\cdot}_\infty$-dense in C)
+\begin{example}[Running Example]\nl
+$Y=X=C=C^0[0,1]$ with $\norm{\cdot}_X=\norm{\cdot}_\infty$ and $A=\frac{d}{dt}$, with $D(A)\stackrel{eg}{=}C^1[0,1]\subset X$ or subspaces thereof. Prime example of  (\underline{unbounded}) operator with dense domain $D(A)$: indeed $C^1[0,1]=C$ using e.g. Weierstrass Approximation Theorem (Polynomials are already $\norm{\cdot}_\infty$-dense in C).
 \end{example}
 \begin{definition}[Graph]\nl
 Let $X$, $Y$ be normed space, $A:D(A)(\subset X)\to Y$ . Graph of $A$ (really  of $(A,D(A))$) is the linear (!) space 
@@ -376,11 +376,11 @@ $$
 We endowed $X\times Y$ with the norm $\norm{(x,y)}_{X\times Y}=\norm{x}_X+\norm{y}_Y$, for all $x\in X$, $y\in Y$.
     
 \end{definition}
-\begin{definition}[Closed Operator]\label{Closed Operator}
+\begin{definition}[Closed Operator]\label{Closed Operator}\nl
 $A$ is called \underline{closed} if $\Gamma_A$ is closed in  $(X\times Y,\norm{\cdot}_{X\times Y})$
 \end{definition}
 
-\begin{example}
+\begin{example}\rm
 Let $A\in\mathcal{L}(X,Y)$ with $D(A)=X$. Then $A$ is closed.
 \begin{pf}{}{}
 	Let $(x_k,y_k)_k\subset \Gamma_A$  with $\norm{(x_k,y_k)-(x,y)}_{X\times Y}\xrightarrow{k\to\infty}0$ for some $(x,y)\in X\times Y$\\
@@ -416,7 +416,7 @@ $$
 \end{pf}
 \end{theorem}
 
-\begin{remark}
+\begin{remark}\nl
 	ii) is simpler than i), but equivalent.\\
 	i) says A is continuous, i.e. if $(x_n)\subset X$, $x\in X$
 	$$\norm{x_n-x}_X\rightarrow{n\to\infty}0\implies\norm{Ax_n-Ax}_Y\rightarrow{n\to\infty}0$$
@@ -434,7 +434,7 @@ $$
 	Which is only one condition to check.
 \end{remark}
 
-\begin{example}[running example continues]
+\begin{example}[running example continues]\nl
 	$(D(A),\norm{\cdot}_\infty)$ with $D(A)=C^1[0,1]$ is NOT Banach, and $A:D(A)\to C$ is an example of an operator which is:\\
 	claim: \\
 	i) closed, but\\
@@ -457,7 +457,7 @@ $$
 	
 \end{corollary}
 
-\begin{example}[???]\nl
+\begin{example}[Inverse exists on a subset]\nl
 	A is surjective: for $g\in C$ define $f(t)=\int_0^t g(s) ds$. Then by FTC, $Af=g$.\\
 	A is not injective: $Af=A\tilde{f}\implies f=\tilde{f}+c,c\in\real$. 
 	Let $D(A)\stackrel{def.}{=} C_0^1[0,1]=\{f\in C^1[0,1]:f(0)=0\}$
