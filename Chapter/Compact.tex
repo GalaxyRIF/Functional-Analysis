@@ -123,11 +123,11 @@ In this section, we consider normed linear spaces over $\comp$, for the reason t
 \end{example}
 
 \begin{remark}\nl
-	In finite dimension, $(\lambda-A)$ not inverttible $\iff(\lambda-A)$ not injective by rank formula. One may wonder if "lack of injectivity"is the only reason for $\lambda\notin \sigma(A)$.
+	In finite dimension, $(\lambda-A)$ not invertible $\iff(\lambda-A)$ not injective by rank formula. One may wonder if "lack of injectivity" is the only reason for $\lambda\notin \sigma(A)$.
 \end{remark}
 
 \begin{definition}\nl
-	Consider linear operatorn $A$ with colsed grapgh and specturm $\sigma(A)$.
+	Consider linear operator $A$ with closed graph and spectrum $\sigma(A)$.
 	\begin{itemize}
 		\item Point spectrum: $\sigma_p(A)\stackrel{def.}{=}
 			      \left\{
@@ -213,11 +213,11 @@ Is this true for all the spectrum of $\mathcal{H}$ (cf. $\comp^n$)?
 		so $2\pi \inte\subset \sigma_p(A_2)\subset\sigma(A_2)$.
 		Let $\lambda\in\comp\setminus a\pi\inte$.
 		Need to show: $\lambda\in\varrho(A_2)$ i.e. \func{\lambda-A_2}{D_{A_2}}{H} is invertible and $(\lambda-A_2)^{-1}\in\mathcal{H}$.\\
-		For $g\in H$, the general sd. of $\lambda f-if'=g$ can be ontained via variation of constant formula:
+		For $g\in H$, the general sd. of $\lambda f-if'=g$ can be obtained via variation of constant formula:
 		$$
 			(*)\rightsquigarrow f(t)=ae^{-i\lambda t}+i \int_0^t e^{i\lambda}g(s)\mathrm{d}s
 		$$
-		for some $a\in\comp$. But if $\lambda\notin2\pi\inte$, the b.b. determines $a$ uiniquely:
+		for some $a\in\comp$. But if $\lambda\notin2\pi\inte$, the b.b. determines $a$ uniquely:
 		$$
 			a=f(0)=f(1)=ae^{-i\lambda}+i\int_0^1e^{i\lambda(s-1)}g(s)\mathrm{d}s$$
 		so
@@ -229,7 +229,7 @@ Is this true for all the spectrum of $\mathcal{H}$ (cf. $\comp^n$)?
         \norm{f}_{L^2}\leq |A|+\norm{g}_{L^2}\leq(|1-e^{-i\lambda}|^{-1})\norm{g}_{L^2}
         $$
 		which shows $(\lambda-A_2)^{-1}\in\mathcal{L}(H)$\\
-		iii) If $A_3f=if'=\lambda f$ for soime $\lambda\in\comp$, then bby (*) $f(t)=ae^{-i\lambda t}$ and $a=0$ since $f(0)=0$, so $\sigma_p(A_3)=\emptyset$.\\
+		iii) If $A_3f=if'=\lambda f$ for some $\lambda\in\comp$, then by (*) $f(t)=ae^{-i\lambda t}$ and $a=0$ since $f(0)=0$, so $\sigma_p(A_3)=\emptyset$.\\
 		On the other hand $(\lambda-A_3)$ for $\lambda\in\comp$ is never surjective ($\implies \lambda\in\varrho(A_3)$). Indeed, consider $g(s)=e^{i\lambda s}$, then using $(*)$ and b.c. get $a=0$ and
 		$$
         f(t)=ie^{-i\lambda t}\int_0^1e^{i\lambda s} \mathrm{d}s=ite^{-i\lambda t}
@@ -252,14 +252,14 @@ We have seen: symmetric operators can have imaginary spectrum, but:
 	\end{pf}
 \end{lemma}
 % mind Im and im, Im is imaginary part and im is image. Pay attention  to the difference.
-The exmaple also nicely illustrates:
+The example also nicely illustrates:
 \begin{proposition}
 	If $A=\dual{A}$, then $\sigma(A)\subset \real$
 	\begin{pf}{}{}
 		Let $\zeta\in\comp\setminus\real$. Want to show $\zeta\in\varrho(A)$, i.e. \func{zeta-A}{D_A}{H} is bijective with $(\zeta-A)^{-1}\in\mathcal{L}(H)$.\\
 		We will show:\\
 		(*) $\zeta-A$ is surjective.\\
-		Once  (*) holds, we are done: by previous lemma, $\zeta-A$ is injective ehnce bijective, and surjectivity + same lemma also yields
+		Once  (*) holds, we are done: by previous lemma, $\zeta-A$ is injective hence bijective, and surjectivity + same lemma also yields
 		$$
 			\norm{(\zeta-A)^{-1}}_{\mathcal{L}(H)}\leq\frac{1}{|Im(\zeta)}
 		$$
@@ -269,7 +269,7 @@ The exmaple also nicely illustrates:
 		$$
 		Assume $v_k=(\zeta-A)u_k\xrightarrow{k\to\infty}$. BY Lemma p.65,
 		$$
-			\norm{u_k-v_k}_H\leq\frac{1}{|Im(\zeta)|}\norm{v_k-v_l}_H\xrightarrow{k,l\to\infty}$$Hence $(u_k)$ is Cauchy and $u_k\to u$ for some $u\in H$. But $A=\dual{A}$ has closed grpah so $v=(\zeta-A)u$, i.e. (**) holds.\\
+			\norm{u_k-v_k}_H\leq\frac{1}{|Im(\zeta)|}\norm{v_k-v_l}_H\xrightarrow{k,l\to\infty}$$Hence $(u_k)$ is Cauchy and $u_k\to u$ for some $u\in H$. But $A=\dual{A}$ has closed graph so $v=(\zeta-A)u$, i.e. (**) holds.\\
 		Back to (*):\\
 		Due to (**), $M\defeq Im(\zeta-A)$ is closed. Assume $M\neq H$. Pick $v\in M^\perp\setminus\{0\}$. Then
 		$$
@@ -286,17 +286,17 @@ The exmaple also nicely illustrates:
 \end{proposition}
 % Below are content for week 10
 \subsection{Spectral theorem for compact self-adjoint operators}
-$H$: Hilbert space over $\comp$, inner product $\inne{\cdot}{\cdot}$, with $\norm{x}^2_H=\inne{x}{x}$. Following is an extension (!) of the familiar result from linear algebra concerning diagonalisation of symmetric matrices.
+$H$: Hilbert space over $\comp$, inner product $\inne{\cdot}{\cdot}$, with $\norm{x}^2_H=\inne{x}{x}$. Following is an extension (!) of the familiar result from linear algebra concerning diagonalization of symmetric matrices.
 \begin{theorem}[Reisz-Schauder]\nl
 	Let  \func{T}{H}{H} be compact and self-adjoint, then:
 	\begin{itemize}
 		\item [i)] $\sigma(T)\subset\real$
 		\item $\sigma_p(T)$ contains at most countably many eigenvalues $\lambda_k\in\real\setminus\{0\}$, which accumulate at most at $\lambda=0$
-		\item [iii)] One can choose $3_k$  corresponding to $\lambda_k$ such that $e_k\perp e_l$ $\forall k\neq l$ and one has $\forall x\in H:Tx=\sum_k \lambda_k e_k\inne{x}{e_k}$
+		\item [iii)] One can choose $e_k$  corresponding to $\lambda_k$ such that $e_k\perp e_l$ $\forall k\neq l$ and one has $\forall x\in H:Tx=\sum_k \lambda_k e_k\inne{x}{e_k}$
 	\end{itemize}
 \end{theorem}
 \begin{example}\nl
-	Shift operator \func{T_\lambda}{\ell^2}{\ell^2} ctd. is compact $\iff \lim_{k\to\infty}\lambda_k=0$, self-adjoint $\iff \lambda_k\in\real\,\forall k$, and we know $\sigma_p(T_\lambda)=\overline{\{\lambda_k:k\in\natu\}}$.
+	Shift operator \func{T_\lambda}{\ell^2}{\ell^2} continued. is compact $\iff \lim_{k\to\infty}\lambda_k=0$, self-adjoint $\iff \lambda_k\in\real\,\forall k$, and we know $\sigma_p(T_\lambda)=\overline{\{\lambda_k:k\in\natu\}}$.
 \end{example}
 We start with the following lemma:
 \begin{lemma}[Lemma 1]
@@ -314,7 +314,7 @@ We start with the following lemma:
 Henceforth, we always assume \func{T}{H}{H} is compact and self-adjoint. In particular, Lemma 1 is in force.\\
 Define, for $\lambda\in\sigma_p(T)\setminus\{0\}$, $X_\lambda=ker(\lambda-T)\neq\{0\}$. By lemma 1:
 $$X_\lambda\perp X_\lambda\,\,\forall\lambda\neq\lambda',\lambda\lambda'\in\sigma_p(T)\setminus\{0\}$$
-\begin{lemma}[Lemma 2]
+\begin{lemma}[Lemma 2]\nl
 	$\lambda\in\sigma_p(T)\setminus\{0\}$.
 	\begin{itemize}
 		\item $dim(X_\lambda)<\infty$
@@ -351,8 +351,14 @@ $$X_\lambda\perp X_\lambda\,\,\forall\lambda\neq\lambda',\lambda\lambda'\in\sigm
 	$$
 		X\defeq\overline{span\{e_k\}}=\overline{\oplus_{\lambda\in\sigma_p(T)\setminus\{0\}}X_\lambda}
 	$$
-	Claim 1 $\forall x\in X$: $x=\sum_k \inne{x}{e_k}e_k$\\
-	proof: Let $x_n=\sum_k\leq n \inne{x}{e_k}e_k$.
+	{\bf Claim 2}: $\forall x\in X$: $x=\sum_k \inne{x}{e_k}e_k$\\
+	{\bf Claim 2}: $Y\defeq X^\perp=ker(T)$\\
+ 
+        If the two claim holds, \placeholder,which concludes the proof. Proof of the two claims follows.
+        
+\end{pf}
+
+\begin{pf}{Claim 1}{}: Let $x_n=\sum_k\leq n \inne{x}{e_k}e_k$.
 	Then $\forall n\geq0$,
 	$$
 		\norm{x_n}_H^2=\sum_{k\leq n}|\inne{x,e_k}|^2=\inne{x_n}{x}\leq\norm{x_n}_H\norm{x}_H$$
@@ -364,24 +370,25 @@ $$X_\lambda\perp X_\lambda\,\,\forall\lambda\neq\lambda',\lambda\lambda'\in\sigm
 	$$\inne{x-y}{e_k}=\lim_{n\to\infty}\inne{x-x_k}{e_k}=\inne{x}{e_k}-\lim_{n\to\infty}\inne{x_n}{e_k}=0$$
 	so $x=y$. With claim 1 and continuity of $T$ we have
 	$$\forall x\in X\,: Tx=\sum_k \inne{x}{e_k}Te_k=\sum_k \inne{x}{e_k}\lambda_ke_k$$
-	It remains to argue:\\
-	{\bf Claim 2}: $Y\defeq X^\perp=ker(T)$, which comcludes the proof.
-	Proof of claim2:\\
+ \end{pf}
+
+\begin{pf}{Claim 2}{}
 	If $Y=\{0\}$, it's trivial. So one can assume $Y\neq\{0\}$. First, note that
 	\begin{equation}T(y)\subset Y\tag{$*$}\end{equation}
 	For, if $y\in Y$ then $\forall k$:
 	\[\inne{e_k}{Ty}=\inne{Te_k}{y}=\lambda\inne{e_k}{y}\stackrel{Y\perp\{e_k\}}{=}0\]
 	By $(*)$,
 	\[T_Y=T|_Y:Y\to Y\] is well defined. $T_Y$ inherits compactness and self-adjointness from $T$ (exercise). We want to show that \func{T_Y}{Y}{Y}: $y\mapsto0 $ is the  "0-map" on $Y$, or equivalently, $\norm{T_Y}_{\mathcal{L}(X)}=0$. If not, one can show (no proof) that
-	\[sigma_p(T)\setminus\{0\}\neq\emptyset\]
-	(in fact $+\lambda$ or $-\lambda$ is an eigenvalue where $\lambda=\norm{T_Y}_{\mathcal{L}(X)}$) But this cna't be because if $e\in Y$ is an eigenvector for $\lambda\in]sigma_p(T)$, $\lambda\neq 0$, then
+	\[\sigma_p(T)\setminus\{0\}\neq\emptyset\]
+	(in fact $+\lambda$ or $-\lambda$ is an eigenvalue where $\lambda=\norm{T_Y}_{\mathcal{L}(X)}$) But this can't be because if $e\in Y$ is an eigenvector for $\lambda\in\sigma_p(T)$, $\lambda\neq 0$, then
 	\[Te\stackrel{e\in Y}{=}T_Y e=\lambda e\]
-	So $e\in X_\lambda\subset X=Y^\perp$. But $Y^\perp\cap Y=\{0\}$
-\end{pf}
+	So $e\in X_\lambda\subset X=Y^\perp$. But $Y^\perp\cap Y=\{0\}$. Thus $Y\defeq X^\perp=ker(T)$.
+ \end{pf}
+
 \begin{remark}
 	We have actually shown that $H$ admits the orthogonal decomposition:
 	\[H=ker(T)\oplus
-		\overline{\oplus_{\lambda\in\sigma_p(T)\setminus\{0\}X_\lambda}}
+		\overline{\bigoplus_{\lambda\in\sigma_p(T)\setminus\{0\}}X_\lambda}
 	\]
 	where $\sigma_p(T)\setminus\{0\}X_\lambda$ is countable.
 \end{remark}
