@@ -51,11 +51,14 @@
 \contentsline {section}{\numberline {9}Weak Topology}{43}{section.9}%
 \contentsline {subsection}{\numberline {9.1}Weak Convergence and weak* convergence}{43}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Consequences of weak convergence}{44}{subsection.9.2}%
-\contentsline {section}{\numberline {10}Appendix}{45}{section.10}%
-\contentsline {subsection}{\numberline {10.1}Young's Inequality}{45}{subsection.10.1}%
-\contentsline {subsection}{\numberline {10.2}Minkowski's inequality}{45}{subsection.10.2}%
-\contentsline {subsection}{\numberline {10.3}Hölder's Inequality}{45}{subsection.10.3}%
-\contentsline {subsection}{\numberline {10.4}Jensen's Inequality (convex function)}{46}{subsection.10.4}%
-\contentsline {subsection}{\numberline {10.5}Completion of metric space}{46}{subsection.10.5}%
-\contentsline {subsection}{\numberline {10.6}$L^p$ space and ${l}^p$ space}{47}{subsection.10.6}%
-\contentsline {section}{\numberline {11}Compact Operators}{48}{section.11}%
+\contentsline {section}{\numberline {10}Compact Operators}{45}{section.10}%
+\contentsline {section}{\numberline {11}Spectrum}{45}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Spectral Theory in Hilbert space}{47}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Spectral theorem for compact self-adjoint operators}{49}{subsection.11.2}%
+\contentsline {section}{\numberline {12}Appendix}{54}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Young's Inequality}{54}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Minkowski's inequality}{54}{subsection.12.2}%
+\contentsline {subsection}{\numberline {12.3}Hölder's Inequality}{54}{subsection.12.3}%
+\contentsline {subsection}{\numberline {12.4}Jensen's Inequality (convex function)}{55}{subsection.12.4}%
+\contentsline {subsection}{\numberline {12.5}Completion of metric space}{55}{subsection.12.5}%
+\contentsline {subsection}{\numberline {12.6}$L^p$ space and ${l}^p$ space}{56}{subsection.12.6}%
