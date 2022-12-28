@@ -160,15 +160,19 @@ In sequel write $A\subset B$, reads $B$ is extension of $A$ if $D_A\subset D_B$ 
 \end{definition}
 
 \begin{remark}[Subtleness  of "symmetric"]\nl
-	In linear algebra, we defined symmetric matrices: $A^T=A$. However we should notice that "symmetric operator" is the conceptual extension of "Hermitian matrix". To see this, consider $H\in\comp^{n\times n}$, Hermitian, i.e. $A\in\comp^{n\times n}$. Then $\forall x,y\in\comp^n$:
+	In linear algebra, we defined symmetric matrices: $A^T=A$. However, we should notice that "symmetric operator" is the conceptual extension of "Hermitian matrix". To see this, consider $H\in\comp^{n\times n}$, Hermitian, i.e. $H^T=\overline{H}$. Then $H$ is a symmetric operator: $\forall x,y\in\comp^n$:
 	$$
 	\inne{Hx}{y}=\overline{x^TH^T}y=(\overline{x^T})(Hy)=\inne{x}{Hy}
 	$$
 	However, an arbitrary symmetric matrix with complex entries: $S\in\comp^{n\times n}$ and $S^T=S$, is not necessarily a symmetric operator:
-	$$
-	\inne{Sx}{y}=\overline{x^TS^T}y=(\overline{x^T})(\overline{S}y)=\inne{x}{\overline{S}y}
-	$$
-	In fact, in Quantum Mechanics, the class of self-adjoint operators are called Hermitian operator. The idea of this definition is being "self-adjoint", at least to an extend. One may show that every "symmetric operator" can be extended to a self-adjoint operator.  
+\begin{equation}
+    \begin{split}
+        \inne{Sx}{y}=\overline{x^TS^T}y&=(\overline{x^T})(\overline{S}y)=\inne{x}{\overline{S}y}\\
+        &\Downarrow\\
+        \inne{Sx}{y}=\inne{x}{\overline{S}y}\iff S&=\overline{S}\iff S\text{ is real symmetric} 
+    \end{split}
+\end{equation}
+	In Quantum Mechanics, the class of self-adjoint operators is called Hermitian operator. The idea of this definition is being "self-adjoint", at least to an extent. One may show that every "symmetric operator" can be extended to a self-adjoint operator.  
 \end{remark}
 What can we say about spectrum $\sigma(A)$ for such $A$?
 
@@ -178,7 +182,7 @@ What can we say about spectrum $\sigma(A)$ for such $A$?
 		Let $\lambda\in\sigma_p(A)$ with non-zero eigenvector $x\in ker(\lambda-A)$. Then $\lambda\norm{X}_H^2=\inne{Ax}{x}\stackrel{symm.}{=}\inne{x}{Ax}=\overline{\inne{Ax}{x}}=\overline{\lambda}\norm{x}_H^1$. So $\lambda=\overline{\lambda}\implies \lambda\in\real$.
 	\end{pf}
 \end{lemma}
-Is this true for all the spectrum of $\mathcal{H}$ (cf. $\comp^n$)?
+Is this true for all the spectrum of $H$ (cf. $\comp^n$)?
 %question part----------------------------------
 \begin{example}\nl
 	$H$=$L^2(0,1)$, $\inne{f}{g}=\int_0^1f\bar{g} \mathrm{d}t$. $A\in\frac{\mathrm{d}}{\mathrm{d}t}$. More precisely, $f\in\mathcal{H}$ is said to have a \underline{weak derivative} $f'$ if $f'\defeq{v}$ for some $v\in \mathcal{H}$, $\int_0^1 fg'\mathrm{d}t=-\int_0^1 vg\mathrm{d}t$, $\forall g\in C^\infty_c(0,1)$.\\
@@ -211,7 +215,7 @@ Is this true for all the spectrum of $\mathcal{H}$ (cf. $\comp^n$)?
 	So symmetric operators can have imaginary spectrum!
 	\begin{pf}{}{}
 		i) For $\lambda\in\comp$, pick $f(t)=e^{-i\lambda t}\in ker(\lambda-A_1)$.\\
-		ii) For $k\in\inte$, $f(t)=e^{-2\pi ikt}\in D_{A_2}\cap ker(a\pi k-A_2$,
+		ii) For $k\in\inte$, $f(t)=e^{-2\pi ikt}\in D_{A_2}\cap ker(a\pi k-A_2)$,
 		so $2\pi \inte\subset \sigma_p(A_2)\subset\sigma(A_2)$.
 		Let $\lambda\in\comp\setminus a\pi\inte$.
 		Need to show: $\lambda\in\varrho(A_2)$ i.e. \func{\lambda-A_2}{D_{A_2}}{H} is invertible and $(\lambda-A_2)^{-1}\in\mathcal{H}$.\\
@@ -255,7 +259,7 @@ We have seen: symmetric operators can have imaginary spectrum, but:
 \end{lemma}
 % mind Im and im, Im is imaginary part and im is image. Pay attention  to the difference.
 The example also nicely illustrates:
-\begin{proposition}[Self-adjoint operator has real specturm]
+\begin{proposition}[Self-adjoint operator has real spectrum]\nl
 	If $A=\dual{A}$, then $\sigma(A)\subset \real$
 	\begin{pf}{}{}
 		Let $\zeta\in\comp\setminus\real$. Want to show $\zeta\in\varrho(A)$, i.e. \func{zeta-A}{D_A}{H} is bijective with $(\zeta-A)^{-1}\in\mathcal{L}(H)$.\\
@@ -293,7 +297,7 @@ $H$: Hilbert space over $\comp$, inner product $\inne{\cdot}{\cdot}$, with $\nor
 	Let  \func{T}{H}{H} be compact and self-adjoint, then:
 	\begin{itemize}
 		\item [i)] $\sigma(T)\subset\real$
-		\item $\sigma_p(T)$ contains at most countably many eigenvalues $\lambda_k\in\real\setminus\{0\}$, which accumulate at most at $\lambda=0$
+		\item [ii)] $\sigma_p(T)$ contains at most countably many eigenvalues $\lambda_k\in\real\setminus\{0\}$, which accumulate at most at $\lambda=0$
 		\item [iii)] One can choose $e_k$  corresponding to $\lambda_k$ such that $e_k\perp e_l$ $\forall k\neq l$ and one has $\forall x\in H:Tx=\sum_k \lambda_k e_k\inne{x}{e_k}$
 	\end{itemize}
 \end{theorem}
