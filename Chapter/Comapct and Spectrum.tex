@@ -3,7 +3,6 @@
 In this section, we'll define and investigate compact operators, the class of operators closest to the concept of finite rank operators. The main theorem of this chapter is that compact operators form a Banach space.
 \begin{definition}[Compact Operators]\nl
 	$X$, $Y$ normed, \func{T}{X}{Y} linear. Then $T$ is a compact operator if $\forall B\subset X$ bounded, $T(B)$ is sequentially Compact.
-
 \end{definition}
 
 \begin{remark}\nl
@@ -44,14 +43,15 @@ In this section, we'll define and investigate compact operators, the class of op
 	is closed, i.e. Banach space.
 \end{remark}
 
+\newpage
 
 \section{Spectrum}
 In this section, we consider normed linear spaces over $\comp$, for the reason that it provides a simpler picture of the spectrum problem. In linear algebra, we know that Hermitian matrices over $\comp$ has real eigenvalues. This is the spectral theory of finite dimensional space. In infinite dimensional spaces, the settings are different, however, are extensions of finite dimensional cases.
-
+\subsection{Spectrum and Resolvent}
 \begin{definition}[Resolvent \& Spectral]\nl
 	Let $X$ be Banach. \func{T}{D_T\subset X}{X} be a linear operator, its resolvent is
 	$$
-		\varrho{T}
+		\varrho({T})
 		\{
 		\lambda\in\comp:(\lambda I-T) \text{ is bijective and } \exists (xI-T)^{-1}\in X^*
 		\}
@@ -73,41 +73,32 @@ In this section, we consider normed linear spaces over $\comp$, for the reason t
 \end{example}
 
 \begin{lemma}\nl
-	If $\sigma_0\in\varrho(A)$, then
+	If $z_0\in\varrho(A)$, then
 	$$D\stackrel{def.}{=}
 		\{
-		\varrho\in\comp:|\varrho-\varrho_0|<\frac{1}{\norm{R(\varrho_0)}_{\mathcal{L}(X)}}
+		\varrho\in\comp:|z-z_0|<\frac{1}{\norm{R_{z_0}}_{\mathcal{L}(X)}}
 		\}
 		\subset\varrho(A)$$
 	Hence $\varrho(A)$ is open, and $\sigma(A)$ is closed.
 	\begin{pf}{}{}
-		Write
+		Write 
 		$$
-			\zeta-A=
-			( \zeta-\zeta_0)+(\zeta_0-A)=(1+(\zeta-\zeta_0)R_{\zeta_0})(\zeta_0-A)
+		z-A=
+		( z-z_0)+(z_0-A)=(1+(z-z_0)R_{z_0})(z_0-A)
 		$$
-		If $\zeta\in D$ then $1+(\zeta-\zeta_0)R_{\zeta_0}$ is invertible with $\circ{1}$:
-		$$
-			(1+(\zeta-\zeta_0)R_{\zeta_0}^{-1}=\sum_{n\geq0}(\zeta0-\zeta)^n {R_{\zeta_0}}^n
-		$$
+		If $z\in D$ then $1+(z-z_0)R_{z_0}$ is invertible with:
+		\[
+		(1+(z-z_0)R_{z_0})^{-1}=\sum_{n\geq0}(z_0-z)^n {R_{z_0}}^n\tag{\textcircled{1}}
+		\]
 		hence also
 		$$
-			R_\zeta=(\zeta-A)^{-1}\stackrel{(*)}{=}R_{\zeta_0}(1+(\zeta-\zeta_0)R_{\zeta_0})^{-1}\in\mathcal{L}(X)
+		R_z=(z-A)^{-1}\stackrel{(*)}{=}R_{z_0}(1+(z-z_0)R_{z_0})^{-1}\in\mathcal{L}(X)
 		$$
-		For $\circ{1}$ use: if $A\in\mathcal{L}(X)$, $\norm{A}<1$ then with $A^0=Id=1$,
+		For \textcircled{1} use: if $A\in\mathcal{L}(X)$, $\norm{A}<1$ then with $A^0=Id=1$,
 		$$
-			\sum_{n=0}^\infty A^n\in\mathcal{L}(X)
+		(1-A^{-1})^{-1}=\sum_{n=0}^\infty A^n\in\mathcal{L}(X)
 		$$
-		i.e. the sequence
-		$$
-			\left(
-			S_n=\sum_{k=0}n A^k
-			\right)\subset\mathcal{L}(X)
-		$$
-		converges, and
-		$$
-			\sum_{n=0}^\infty A^n=(1-A^{-1})^{-1}
-		$$
+		proof left as exercise.
 	\end{pf}
 \end{lemma}
 
@@ -118,7 +109,7 @@ In this section, we consider normed linear spaces over $\comp$, for the reason t
 	\end{pf}
 
 	\begin{pf}{$\sigma(T)\subset\overline{\{\lambda_k:k\in\natu\}}$}{}
-		If $\Tilde{\lambda}\notin\overline{\{\lambda_k:k\in\natu\}}$, then $\exists\delta>0$ s.t. $|\Tilde{\lambda}-\lambda_k|>\delta$ $\forall k\in\natu$. Let $x\in\ell^2$, $y\stackrel{def.}{=}(\Tilde{\lambda}-T)x=((\Tilde{\lambda}-\lambda_k)x_k)_k$. So $x_k=(\Tilde{\lambda}-\lambda_k)^{-1}y_k$ and $\norm{x}_{\ell^2}\leq\delta^{-1}\norm{y}_{\ell^2}$ which implies $(\Tilde{\lambda}-T)^{-1}\in\mathcal{L}(H)$ and $\tilde{\lambda}\in\varrho(T)$
+		If $\widetilde{\lambda}\notin\overline{\{\lambda_k:k\in\natu\}}$, then $\exists\delta>0$ s.t. $|\widetilde{\lambda}-\lambda_k|>\delta$ $\forall k\in\natu$. Let $x\in\ell^2$, $y\stackrel{def.}{=}(\widetilde{\lambda}-T)x=((\widetilde{\lambda}-\lambda_k)x_k)_k$. So $x_k=(\widetilde{\lambda}-\lambda_k)^{-1}y_k$ and $\norm{x}_{\ell^2}\leq\delta^{-1}\norm{y}_{\ell^2}$ which implies $(\widetilde{\lambda}-T)^{-1}\in\mathcal{L}(H)$ and $\widetilde{\lambda}\in\varrho(T)$
 	\end{pf}
 \end{example}
 
@@ -159,7 +150,7 @@ $
 % Below are content from written lecture note 9.2-10
 
 \subsection{Spectral Theory in Hilbert space}
-Consider $(H,\inne{\cdot}{\cdot}$, Hilbert space over $\comp$, \func{A}{{D_A\subset H}}{H} linear, with adjoint \func{\dual{A}}{D_\dual{A}\subset H}{H}. Recall $\dual{A}$ characterised by $\forall x\in D_A$, $y\in D_\dual{A}$: $\inne{\dual{A}y}{x}=\inne{y}{Ax}$ and $D_\dual{A}=\{y\in H : l_y:D_A\to \comp,\,x\mapsto \inne{y}{Ax}\,\text{ is continuous }\}$.
+Consider $(H,\inne{\cdot}{\cdot}$, Hilbert space over $\comp$, \func{A}{{D_A\subset H}}{H} linear, with adjoint \func{\dual{A}}{D_\dual{A}\subset H}{H}. Recall $\dual{A}$ characterized by $\forall x\in D_A$, $y\in D_\dual{A}$: $\inne{\dual{A}y}{x}=\inne{y}{Ax}$ and $D_\dual{A}=\{y\in H : l_y:D_A\to \comp,\,x\mapsto \inne{y}{Ax}\,\text{ is continuous }\}$.
 In sequel write $A\subset B$, reads $B$ is extension of $A$ if $D_A\subset D_B$ and $B|_{D_A}=A$.
 
 
@@ -168,10 +159,21 @@ In sequel write $A\subset B$, reads $B$ is extension of $A$ if $D_A\subset D_B$ 
 	ii) $A$ is {\underline{self-adjoint}} if $A=\dual{A}$, i.e. A symmetric with $D_\dual{A}=D_A$.
 \end{definition}
 
+\begin{remark}[Subtleness  of "symmetric"]\nl
+	In linear algebra, we defined symmetric matrices: $A^T=A$. However we should notice that "symmetric operator" is the conceptual extension of "Hermitian matrix". To see this, consider $H\in\comp^{n\times n}$, Hermitian, i.e. $A\in\comp^{n\times n}$. Then $\forall x,y\in\comp^n$:
+	$$
+	\inne{Hx}{y}=\overline{x^TH^T}y=(\overline{x^T})(Hy)=\inne{x}{Hy}
+	$$
+	However, an arbitrary symmetric matrix with complex entries: $S\in\comp^{n\times n}$ and $S^T=S$, is not necessarily a symmetric operator:
+	$$
+	\inne{Sx}{y}=\overline{x^TS^T}y=(\overline{x^T})(\overline{S}y)=\inne{x}{\overline{S}y}
+	$$
+	In fact, in Quantum Mechanics, the class of self-adjoint operators are called Hermitian operator. The idea of this definition is being "self-adjoint", at least to an extend. One may show that every "symmetric operator" can be extended to a self-adjoint operator.  
+\end{remark}
 What can we say about spectrum $\sigma(A)$ for such $A$?
 
-\begin{lemma}
-	IF $A$ is symmetric, $\sigma_p(A)\subset\real$.
+\begin{lemma}[Symmetric operator has real point spectrum]\nl
+	If $A$ is symmetric, $\sigma_p(A)\subset\real$.
 	\begin{pf}{}{}
 		Let $\lambda\in\sigma_p(A)$ with non-zero eigenvector $x\in ker(\lambda-A)$. Then $\lambda\norm{X}_H^2=\inne{Ax}{x}\stackrel{symm.}{=}\inne{x}{Ax}=\overline{\inne{Ax}{x}}=\overline{\lambda}\norm{x}_H^1$. So $\lambda=\overline{\lambda}\implies \lambda\in\real$.
 	\end{pf}
@@ -188,10 +190,10 @@ Is this true for all the spectrum of $\mathcal{H}$ (cf. $\comp^n$)?
 	\begin{equation}
 		\begin{aligned}
 			 & D_{A_1}=H^1\defeq\{f\in H: f \text{ has a weak derivative  f'}\} \\
-			 & \cup                                                            \\
-			 & D_{A_2}=\{f\in H^1:f(0)=f(1)\}\text{ periodic b.c.}             \\
-			 & \cup                                                            \\
-			 & D_{A_3}=\{f\in H^1: f(0)=0=f(1)\}\text{ Dirichlet b.c.}         \\
+			 & \cup                                                             \\
+			 & D_{A_2}=\{f\in H^1:f(0)=f(1)\}\text{ periodic b.c.}              \\
+			 & \cup                                                             \\
+			 & D_{A_3}=\{f\in H^1: f(0)=0=f(1)\}\text{ Dirichlet b.c.}          \\
 		\end{aligned}
 	\end{equation}
 	Set $A_k(f)=if'\,\,\forall f\in D_{A_k}$. Evidently $ A_\infty\subsetneq A_3\subsetneq A_2 \subsetneq A_1$.\\
@@ -226,20 +228,20 @@ Is this true for all the spectrum of $\mathcal{H}$ (cf. $\comp^n$)?
 		$$
 		so $\lambda-A_2$ is invertible and
 		$$
-        \norm{f}_{L^2}\leq |A|+\norm{g}_{L^2}\leq(|1-e^{-i\lambda}|^{-1})\norm{g}_{L^2}
-        $$
+			\norm{f}_{L^2}\leq |A|+\norm{g}_{L^2}\leq(|1-e^{-i\lambda}|^{-1})\norm{g}_{L^2}
+		$$
 		which shows $(\lambda-A_2)^{-1}\in\mathcal{L}(H)$\\
 		iii) If $A_3f=if'=\lambda f$ for some $\lambda\in\comp$, then by (*) $f(t)=ae^{-i\lambda t}$ and $a=0$ since $f(0)=0$, so $\sigma_p(A_3)=\emptyset$.\\
 		On the other hand $(\lambda-A_3)$ for $\lambda\in\comp$ is never surjective ($\implies \lambda\in\varrho(A_3)$). Indeed, consider $g(s)=e^{i\lambda s}$, then using $(*)$ and b.c. get $a=0$ and
 		$$
-        f(t)=ie^{-i\lambda t}\int_0^1e^{i\lambda s} \mathrm{d}s=ite^{-i\lambda t}
-        $$
+			f(t)=ie^{-i\lambda t}\int_0^1e^{i\lambda s} \mathrm{d}s=ite^{-i\lambda t}
+		$$
 		but $f(1)\neq0$ so $f\notin D_{A_3}$.
 	\end{pf}
 \end{example}
 %question part-------------------------------------
 We have seen: symmetric operators can have imaginary spectrum, but:
-\begin{lemma}
+\begin{lemma}\nl
 	Let $A\subset \dual{A}$. Then $\forall\zeta\in\comp\,\forall u\in D_A$: $\norm
 		{(\zeta-A)u}_H\geq |Im(\zeta)|\norm{u}_H$.\\
 	(So for $\zeta\notin\real\implies(\zeta-A)$ injective, i.e. $\zeta\notin\sigma_p(A)$)
@@ -253,7 +255,7 @@ We have seen: symmetric operators can have imaginary spectrum, but:
 \end{lemma}
 % mind Im and im, Im is imaginary part and im is image. Pay attention  to the difference.
 The example also nicely illustrates:
-\begin{proposition}
+\begin{proposition}[Self-adjoint operator has real specturm]
 	If $A=\dual{A}$, then $\sigma(A)\subset \real$
 	\begin{pf}{}{}
 		Let $\zeta\in\comp\setminus\real$. Want to show $\zeta\in\varrho(A)$, i.e. \func{zeta-A}{D_A}{H} is bijective with $(\zeta-A)^{-1}\in\mathcal{L}(H)$.\\
@@ -339,6 +341,7 @@ $$X_\lambda\perp X_\lambda\,\,\forall\lambda\neq\lambda',\lambda\lambda'\in\sigm
 		$$
 	\end{pf}
 \end{lemma}
+
 \begin{pf}{Riesz-Schauder}{}
 	Proof of i) see last week.\\
 	ii) By Lemma 2 ii),
@@ -349,13 +352,13 @@ $$X_\lambda\perp X_\lambda\,\,\forall\lambda\neq\lambda',\lambda\lambda'\in\sigm
 	to distinct eigenvalues $\lambda+k\neq\lambda_l$ this is automatic after normalizing them to have norm 1 by lemma 1.\\
 	So let $(\lambda_k)$ be the elements of $\sigma_p(T)\setminus\{0\}$, counted with multiplicities( i.e. $dim(X_{\lambda_k})$ copies of $\lambda_k$. Let
 	$$
-		X\defeq\overline{span\{e_k\}}=\overline{\oplus_{\lambda\in\sigma_p(T)\setminus\{0\}}X_\lambda}
+		X\defeq\overline{span\{e_k\}}=\overline{\bigoplus_{\lambda\in\sigma_p(T)\setminus\{0\}}X_\lambda}
 	$$
-	{\bf Claim 2}: $\forall x\in X$: $x=\sum_k \inne{x}{e_k}e_k$\\
+	{\bf Claim 1}: $\forall x\in X$: $x=\sum_k \inne{x}{e_k}e_k$\\
 	{\bf Claim 2}: $Y\defeq X^\perp=ker(T)$\\
- 
-        If the two claim holds, \placeholder,which concludes the proof. Proof of the two claims follows.
-        
+	If the two claim holds, \\
+	\placeholder\\
+	which concludes the proof. Proof of the two claims follows.
 \end{pf}
 
 \begin{pf}{Claim 1}{}: Let $x_n=\sum_k\leq n \inne{x}{e_k}e_k$.
@@ -370,7 +373,7 @@ $$X_\lambda\perp X_\lambda\,\,\forall\lambda\neq\lambda',\lambda\lambda'\in\sigm
 	$$\inne{x-y}{e_k}=\lim_{n\to\infty}\inne{x-x_k}{e_k}=\inne{x}{e_k}-\lim_{n\to\infty}\inne{x_n}{e_k}=0$$
 	so $x=y$. With claim 1 and continuity of $T$ we have
 	$$\forall x\in X\,: Tx=\sum_k \inne{x}{e_k}Te_k=\sum_k \inne{x}{e_k}\lambda_ke_k$$
- \end{pf}
+\end{pf}
 
 \begin{pf}{Claim 2}{}
 	If $Y=\{0\}$, it's trivial. So one can assume $Y\neq\{0\}$. First, note that
@@ -383,7 +386,7 @@ $$X_\lambda\perp X_\lambda\,\,\forall\lambda\neq\lambda',\lambda\lambda'\in\sigm
 	(in fact $+\lambda$ or $-\lambda$ is an eigenvalue where $\lambda=\norm{T_Y}_{\mathcal{L}(X)}$) But this can't be because if $e\in Y$ is an eigenvector for $\lambda\in\sigma_p(T)$, $\lambda\neq 0$, then
 	\[Te\stackrel{e\in Y}{=}T_Y e=\lambda e\]
 	So $e\in X_\lambda\subset X=Y^\perp$. But $Y^\perp\cap Y=\{0\}$. Thus $Y\defeq X^\perp=ker(T)$.
- \end{pf}
+\end{pf}
 
 \begin{remark}
 	We have actually shown that $H$ admits the orthogonal decomposition:

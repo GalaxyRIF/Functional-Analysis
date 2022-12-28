@@ -52,9 +52,10 @@
 \contentsline {subsection}{\numberline {9.1}Weak Convergence and weak* convergence}{43}{subsection.9.1}%
 \contentsline {subsection}{\numberline {9.2}Consequences of weak convergence}{44}{subsection.9.2}%
 \contentsline {section}{\numberline {10}Compact Operators}{45}{section.10}%
-\contentsline {section}{\numberline {11}Spectrum}{45}{section.11}%
-\contentsline {subsection}{\numberline {11.1}Spectral Theory in Hilbert space}{47}{subsection.11.1}%
-\contentsline {subsection}{\numberline {11.2}Spectral theorem for compact self-adjoint operators}{49}{subsection.11.2}%
+\contentsline {section}{\numberline {11}Spectrum}{46}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Spectrum and Resolvent}{46}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Spectral Theory in Hilbert space}{47}{subsection.11.2}%
+\contentsline {subsection}{\numberline {11.3}Spectral theorem for compact self-adjoint operators}{50}{subsection.11.3}%
 \contentsline {section}{\numberline {12}Appendix}{54}{section.12}%
 \contentsline {subsection}{\numberline {12.1}Young's Inequality}{54}{subsection.12.1}%
 \contentsline {subsection}{\numberline {12.2}Minkowski's inequality}{54}{subsection.12.2}%
